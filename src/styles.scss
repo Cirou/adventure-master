@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+body {
+  font-family: 'Cinzel', serif;
+  background: linear-gradient(to bottom, rgba(244, 208, 63, 0.25), rgba(244, 208, 63, 0.15));
+  margin: 0;
+}
+
+:host {
+  display: block;
+  font-family: 'Cinzel', serif;
+  color: #3e2f1a;
+}
+
+.hero {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+
+  .hero-content {
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.lore-section, .stirpe, .disclaimer, .download, .connection .cta {
+  padding: 20px 20px;
+  max-width: 800px;
+  margin: auto;
+
+  h2 {
+    font-size: 2rem;
+    color: #8b5e3b;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+.cta {
+  text-align: center;
+  background: linear-gradient(to right, #9c6745, #c49a5d); // Sfumatura dorata
+  color: white;
+  padding: 40px;
+  margin-top: 40px;
+  border-radius: 8px;
+
+  h2 {
+    font-size: 2rem;
+  }
+
+}
+
+.cta-button {
+  font-family: 'Cinzel', serif;
+  background: #f4d03f;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #3a3a3a;
+
+  &:hover {
+    background: #e8c02c;
+  }
+}
+
+.discord {
+  background: #7289da;
+  color: white;
+
+  &:hover {
+    background: #5a6fb0;
+  }
+}

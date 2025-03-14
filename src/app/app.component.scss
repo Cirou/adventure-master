@@ -1,0 +1,10 @@
+.navbar {
+  background: linear-gradient(to right, #9c6745, #c49a5d); // Sfumatura calda dorata
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
