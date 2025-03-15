@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule, Event, NavigationEnd } from '@angular/router';
 import { FooterComponent } from "./components/footer/footer.component";
+import { NavbarComponent } from "./components/navbar/navbar.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, FooterComponent],
+  imports: [RouterModule, FooterComponent, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -21,12 +22,6 @@ export class AppComponent {
     });
   }
 
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen;
-  }
 
-  closeMenu() {
-    this.menuOpen = false;
-  }
 }
 

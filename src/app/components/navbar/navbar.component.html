@@ -1,0 +1,16 @@
+<nav class="navbar">
+    <div class="logo">
+      <a routerLink="/">Adventure Master</a>
+    </div>
+  
+    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+  
+    <ul [class.open]="menuOpen">
+      <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
+      <li><a routerLink="/ambientazione" (click)="closeMenu()">Ambientazione</a></li>
+      <li><a routerLink="/stirpi" (click)="closeMenu()">Stirpi</a></li>
+      <li><a routerLink="/regolamento" (click)="closeMenu()">Regolamento</a></li>
+      <li><a routerLink="/download" (click)="closeMenu()">Download</a></li>
+      <li><a href="https://discord.gg/ZzagxEAg5a" target="_blank" class="discord-button">Discord</a></li>
+    </ul>
+  </nav>
