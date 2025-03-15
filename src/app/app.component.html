@@ -1,11 +1,20 @@
 <nav class="navbar">
-    <button routerLink="/" class="cta-button">Home</button>
-    <button routerLink="/ambientazione" class="cta-button">Ambientazione</button>
-    <button routerLink="/stirpi" class="cta-button">Stirpi</button>
-    <button routerLink="/regolamento" class="cta-button">Regolamento</button>
-    <button routerLink="/download" class="cta-button">Download</button>
-    <button href="https://discord.gg/ZzagxEAg5a" target="_blank" class="cta-button discord">Discord</button>
-  </nav>
+  <div class="logo">
+    <a routerLink="/">Adventure Master</a>
+  </div>
+
+  <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+
+  <ul [class.open]="menuOpen">
+    <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
+    <li><a routerLink="/ambientazione" (click)="closeMenu()">Ambientazione</a></li>
+    <li><a routerLink="/stirpi" (click)="closeMenu()">Stirpi</a></li>
+    <li><a routerLink="/regolamento" (click)="closeMenu()">Regolamento</a></li>
+    <li><a routerLink="/download" (click)="closeMenu()">Download</a></li>
+    <li><a href="https://discord.gg/ZzagxEAg5a" target="_blank" class="discord-button">Discord</a></li>
+  </ul>
+</nav>
+
   
   <router-outlet></router-outlet>
   
