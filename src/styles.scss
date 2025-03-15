@@ -11,6 +11,22 @@
   }
 }
 
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; // ✅ Impedisce lo scroll orizzontale indesiderato
+}
+
+router-outlet {
+  display: block;
+  width: 100%; // ✅ Assicura che il contenuto si adatti alla larghezza dello schermo
+  max-width: 100vw; // ✅ Evita allargamenti indesiderati
+  box-sizing: border-box;
+}
+
+
 body {
   font-family: 'Cinzel', serif;
   background: linear-gradient(to bottom, rgba(244, 208, 63, 0.25), rgba(244, 208, 63, 0.15));
@@ -141,3 +157,4 @@ body {
     background: #5a6fb0;
   }
 }
+
