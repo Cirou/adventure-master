@@ -1,0 +1,45 @@
+.footer {
+  background: linear-gradient(to right, #9c6745, #c49a5d); // Sfumatura dorata
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer a {
+  color: #f4d03f;
+  text-decoration: none;
+  margin: 5px 5px;
+}
+
+.footer h2 {
+  font-size: 1.5em;
+  margin: 5px 5px;
+}
+
+.footer p {
+  margin: 5px 5px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* 🎚️ Stile per il controllo volume */
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.volume-control input {
+  width: 100px;
+}
