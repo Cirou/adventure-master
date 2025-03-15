@@ -56,10 +56,6 @@ a:hover {
 
 /* 📱 Responsive Design */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
   ul {
     display: none;
     flex-direction: column;
@@ -68,11 +64,17 @@ a:hover {
     top: 60px;
     left: 0;
     width: 100%;
+    max-width: 100vw;
     padding: 20px;
     text-align: center;
+    overflow-x: hidden;
   }
 
   ul.open {
     display: flex;
+  }
+
+  body {
+    overflow-x: hidden; // ✅ Evita che l’intera pagina abbia lo scroll orizzontale
   }
 }
