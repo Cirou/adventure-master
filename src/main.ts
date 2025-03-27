@@ -32,7 +32,7 @@ bootstrapApplication(AppComponent, {
       { path: 'clover', component: CloverComponent },
       { path: 'etere', component: EtereComponent },
       { path: 'gioco', component: GiocoComponent },
-      { path: 'classi', component: ClassiComponent },
+      { path: 'classi-di-gioco', component: ClassiComponent },
       { path: '**', redirectTo: '' }
     ])
   ]
