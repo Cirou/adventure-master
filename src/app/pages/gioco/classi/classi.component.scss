@@ -19,7 +19,7 @@
         margin-top: 20px;
         color: #8b5e3b;
     }
-    
+
     .class-lore {
         font-style: italic;
         margin-bottom: 20px;
@@ -28,11 +28,60 @@
         font-size: 0.9em;
         color: #1f1f1f;
     }
-    
+
     .class-desc {
         font-size: 1.1rem;
         margin-top: 20px;
         color: #3c2a1e;
+    }
+
+    .necromante img {
+        --glow-color:  rgb(101, 197, 142);
+    }
+
+    .guerriero img {
+        --glow-color: rgba(255, 140, 0, 0.8);
+    }
+
+    .cacciatore img {
+        --glow-color: rgb(229, 151, 12);// verde foresta
+    }
+
+    .berserker img {
+        --glow-color: rgba(255, 0, 0, 0.8); // rosso sangue
+    }
+
+    .arcanista img {
+        --glow-color: rgb(134, 121, 217);
+    }
+
+    .curatore img {
+        --glow-color: rgba(255, 255, 153, 0.8); // giallo tenue
+    }
+
+    .bardo img {
+        --glow-color: rgba(255, 102, 255, 0.8); // rosa/viola artistico
+    }
+
+    .ladro img {
+        --glow-color: rgba(0, 0, 0, 1); // grigio ombra
+    }
+
+    img {
+        animation: etherealPulse 3s ease-in-out infinite;
+        transition: filter 0.3s ease;
+    }
+
+    @keyframes etherealPulse {
+
+        0%,
+        100% {
+            filter: drop-shadow(0 0 10px var(--glow-color));
+        }
+
+        50% {
+            filter: drop-shadow(0 0 20px var(--glow-color));
+        }
     }
 
 }
@@ -84,33 +133,31 @@
 .class-menu {
     margin: 30px auto 10px auto;
     text-align: center;
-  
-    ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-    }
-  
-    li {
-      cursor: pointer;
-      padding: 8px 16px;
-      background: #f4d03f;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: 0.3s;
-  
-      &:hover {
-        background: #e8c02c;
-      }
-  
-      &.active {
-        background: #8b5e3b;
-        color: white;
-      }
-    }
-  }
-  
 
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    li {
+        cursor: pointer;
+        padding: 8px 16px;
+        background: #f4d03f;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: 0.3s;
+
+        &:hover {
+            background: #e8c02c;
+        }
+
+        &.active {
+            background: #8b5e3b;
+            color: white;
+        }
+    }
+}

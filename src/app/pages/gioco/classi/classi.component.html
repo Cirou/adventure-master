@@ -18,7 +18,7 @@
 
     <div class="carousel-window">
         <div class="carousel-track" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
-            <div class="carousel-slide" *ngFor="let classe of classi">
+            <div class="carousel-slide" *ngFor="let classe of classi" [ngClass]="classe.nome.toLowerCase()">
                 <h2 class="class-name">{{ classe.nome }}</h2>
                 <p class="class-lore">“{{ classe.racconto }}”</p>
                 <img [src]="classe.immagine" [alt]="classe.nome" />

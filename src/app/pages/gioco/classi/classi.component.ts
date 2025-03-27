@@ -21,16 +21,7 @@ export class ClassiComponent {
   Ma ciò che è certo è che l’Arcanista non lancia magie. Lei ridefinisce le regole.`,
       descrizione: 'L’Arcanista è un canalizzatore puro dell’Etere, capace di modellarlo in formule complesse, scudi temporanei, esplosioni controllate o illusioni destabilizzanti. È la classe con la maggiore padronanza teorica della materia arcana e spesso l’unica a comprendere davvero come l’Etere reagisca a certi stimoli. A distanza domina il campo, ma resta fragile fisicamente. Tuttavia, ciò che gli manca in armatura lo compensa con potenza distruttiva.'
     },
-    {
-      nome: 'Arciere',
-      immagine: 'images/classi/archer.png',
-      racconto: `Tra le foglie che non cadono mai, in una parte del Bosco di Lume dove la luce si comporta in modo strano, qualcuno veglia. Non lascia tracce, non parla con nessuno. Ma le sue frecce, nere come l’ebano, compaiono conficcate nei cuori delle bestie più feroci, sempre con una precisione disumana.
-  
-  Si racconta che un tempo Alira fosse una bambina muta, cresciuta tra le rovine della Stirpe dell’Ovest. Un giorno, sparì. Quando tornò, parlava con gli alberi, vedeva nel vento, colpiva da distanze che sfidano la vista stessa.
-  
-  L’Arciere non si mostra mai. Perché chi l’ha visto… non ha avuto tempo di raccontarlo.`,
-      descrizione: 'Silenzioso, preciso, letale. L’Arciere è un maestro della distanza, in grado di percepire l’Etere nei flussi d’aria, nelle vibrazioni del terreno, nei battiti del cuore dei nemici. Le sue frecce non sono semplici proiettili: ognuna è canalizzata con effetti eterici unici, che possono rallentare, accecare o perforare persino le difese più arcane. Si muove con agilità tra gli alberi e i tetti, invisibile fino all’ultimo respiro.'
-    },
+
     {
       nome: 'Bardo',
       immagine: 'images/classi/bard.png',
@@ -50,6 +41,20 @@ export class ClassiComponent {
   
   Il Berserker non vive nel tempo. È una cicatrice nel tessuto stesso della realtà.`,
       descrizione: 'Brutale, impetuoso, indomabile. Il Berserker non controlla l’Etere: lo lascia esplodere attraverso di sé. In combattimento entra in uno stato di trance che potenzia muscoli e istinti. I suoi attacchi sono devastanti, ma non caotici: dietro l’ira c’è una forma di lucidità predatoria. È in grado di sopravvivere a colpi mortali e combattere a lungo dopo aver subito ferite gravi. La sua presenza sul campo incute paura persino agli alleati.'
+    },
+    {
+      nome: 'Cacciatore',
+      immagine: 'images/classi/archer.png',
+      racconto: `Nessuno l’ha mai sentita arrivare. Solo il battito d’ali di una creatura mai vista prima, un’eco dorata tra i rami, e poi il silenzio.
+
+Lei lo chiama Ash, ma Ash non è un animale. È Etere che ha preso forma, nato dal legame con la sua anima. Il Cacciatore non addestra: crea. Non uccide per sopravvivere: colpisce per ristabilire un equilibrio.
+
+Si racconta che provenga dalle terre selvagge a ovest di Clover, dove la natura ha inghiottito città e confini. Là dove gli altri vedono un mondo perduto, lui vede un mondo sveglio.
+
+Ogni colpo è una scelta. Ogni creatura che lo accompagna è un ricordo.
+
+Il Cacciatore non è mai solo. E se lo vedi… non sei più al sicuro.`,
+      descrizione: 'Il Cacciatore è un arciere legato all’Etere vivente, capace di evocare famigli eterici che lo affiancano in battaglia. Preciso e furtivo, controlla il campo a distanza sfruttando sinergie tra frecce incantate e creature arcane. Il suo potere nasce dal legame con la natura e dall’istinto affinato nella solitudine dei territori selvaggi.'
     },
     {
       nome: 'Curatore Arcano',
