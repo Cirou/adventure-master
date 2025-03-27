@@ -6,13 +6,15 @@ import { AmbientazioneComponent } from './app/pages/ambientazione/ambientazione.
 import { StirpiComponent } from './app/pages/stirpi/stirpi.component';
 import { RegolamentoComponent } from './app/pages/regolamento/regolamento.component';
 import { DownloadComponent } from './app/pages/download/download.component';
-import { StirpiSudComponent } from './app/pages/stirpi-sud/stirpi-sud.component';
-import { StirpiNordComponent } from './app/pages/stirpi-nord/stirpi-nord.component';
-import { StirpiOvestComponent } from './app/pages/stirpi-ovest/stirpi-ovest.component';
-import { GildaAvventurieriComponent } from './app/pages/gilda-avventurieri/gilda-avventurieri.component';
-import { TabulaRasaComponent } from './app/pages/tabula-rasa/tabula-rasa.component';
-import { CloverComponent } from './app/pages/clover/clover.component';
-import { EtereComponent } from './app/pages/etere/etere.component';
+import { StirpiSudComponent } from './app/pages/stirpi/stirpi-sud/stirpi-sud.component';
+import { StirpiNordComponent } from './app/pages/stirpi/stirpi-nord/stirpi-nord.component';
+import { StirpiOvestComponent } from './app/pages/stirpi/stirpi-ovest/stirpi-ovest.component';
+import { GildaAvventurieriComponent } from './app/pages/stirpi/gilda-avventurieri/gilda-avventurieri.component';
+import { TabulaRasaComponent } from './app/pages/ambientazione/tabula-rasa/tabula-rasa.component';
+import { CloverComponent } from './app/pages/ambientazione/clover/clover.component';
+import { EtereComponent } from './app/pages/ambientazione/etere/etere.component';
+import { GiocoComponent } from './app/pages/gioco/gioco.component';
+import { ClassiComponent } from './app/pages/gioco/classi/classi.component';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -29,6 +31,8 @@ bootstrapApplication(AppComponent, {
       { path: 'tabula-rasa', component: TabulaRasaComponent },
       { path: 'clover', component: CloverComponent },
       { path: 'etere', component: EtereComponent },
+      { path: 'gioco', component: GiocoComponent },
+      { path: 'classi', component: ClassiComponent },
       { path: '**', redirectTo: '' }
     ])
   ]

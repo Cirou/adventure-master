@@ -1,0 +1,34 @@
+<div class="hero">
+    <div class="hero-content">
+        <h1>Le Classi di Adventure Master</h1>
+        <p>Scegli chi vuoi essere. Tutto ruota attorno all'Etere.</p>
+    </div>
+</div>
+
+<div class="class-menu">
+    <ul>
+        <li *ngFor="let classe of classi; let i = index" [class.active]="i === currentSlide" (click)="goToSlide(i)">
+            {{ classe.nome }}
+        </li>
+    </ul>
+</div>
+
+<div class="carousel">
+    <button class="carousel-nav prev" (click)="prevSlide()">⮜</button>
+
+    <div class="carousel-window">
+        <div class="carousel-track" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
+            <div class="carousel-slide" *ngFor="let classe of classi">
+                <h2 class="class-name">{{ classe.nome }}</h2>
+                <p class="class-lore">“{{ classe.racconto }}”</p>
+                <img [src]="classe.immagine" [alt]="classe.nome" />
+                <section class="info-bottom">
+                    <p>{{ classe.descrizione }}</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    <button class="carousel-nav next" (click)="nextSlide()">⮞</button>
+</div>

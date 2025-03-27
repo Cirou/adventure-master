@@ -1,0 +1,20 @@
+.hero {
+    background: url('/images/gioco.png') center/cover no-repeat;
+}
+
+.class-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+
+    li {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    strong {
+        font-size: 1.3rem;
+        color: #8b5e3b;
+    }
+}
