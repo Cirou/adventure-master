@@ -15,6 +15,15 @@ import { CloverComponent } from './app/pages/ambientazione/clover/clover.compone
 import { EtereComponent } from './app/pages/ambientazione/etere/etere.component';
 import { GiocoComponent } from './app/pages/gioco/gioco.component';
 import { ClassiComponent } from './app/pages/gioco/classi/classi.component';
+import { ArmiComponent } from './app/pages/guide/armi/armi.component';
+import { CittadinanzaComponent } from './app/pages/guide/cittadinanza/cittadinanza.component';
+import { DiplomaziaComponent } from './app/pages/guide/diplomazia/diplomazia.component';
+import { GuideComponent } from './app/pages/guide/guide/guide.component';
+import { IncantareComponent } from './app/pages/guide/incantare/incantare.component';
+import { LinguaggiComponent } from './app/pages/guide/linguaggi/linguaggi.component';
+import { NavaleComponent } from './app/pages/guide/navale/navale.component';
+import { NuotareComponent } from './app/pages/guide/nuotare/nuotare.component';
+import { RankComponent } from './app/pages/guide/rank/rank.component';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -33,6 +42,15 @@ bootstrapApplication(AppComponent, {
       { path: 'etere', component: EtereComponent },
       { path: 'gioco', component: GiocoComponent },
       { path: 'classi-di-gioco', component: ClassiComponent },
+      { path: 'gioco/guide', component: GuideComponent },
+      { path: 'gioco/guide/armi', component: ArmiComponent },
+      { path: 'gioco/guide/rank', component: RankComponent },
+      { path: 'gioco/guide/cittadinanza', component: CittadinanzaComponent },
+      { path: 'gioco/guide/nuotare', component: NuotareComponent },
+      { path: 'gioco/guide/diplomazia', component: DiplomaziaComponent },
+      { path: 'gioco/guide/incantare', component: IncantareComponent },
+      { path: 'gioco/guide/linguaggi', component: LinguaggiComponent },
+      { path: 'gioco/guide/navale', component: NavaleComponent },
       { path: '**', redirectTo: '' }
     ])
   ]

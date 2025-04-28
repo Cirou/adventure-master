@@ -5,13 +5,15 @@
     transform: scale(1.01); // Inizio leggermente ingrandito
     opacity: 0.9; // Effetto di fade-in
   }
+
   to {
     transform: scale(1);
     opacity: 1;
   }
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -42,6 +44,7 @@ router-outlet {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -73,7 +76,11 @@ router-outlet {
   }
 }
 
-.lore-section, .stirpe, .disclaimer, .download, .connection .cta {
+.lore-section,
+.stirpe,
+.disclaimer,
+.download,
+.connection .cta {
   padding: 20px 20px;
   max-width: 800px;
   margin: auto;
@@ -90,22 +97,22 @@ router-outlet {
   }
 }
 
-  .feature {
-    width: 30%;
-    min-width: 250px;
-    text-align: center;
-    color: #3e2f1a; // Marrone scuro per il testo (uniforme con altre pagine)
-  
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      color: #8b5e3b; // Marrone chiaro per i titoli
-    }
-  
-    p {
-      font-size: 1rem;
-    }
+.feature {
+  width: 30%;
+  min-width: 250px;
+  text-align: center;
+  color: #3e2f1a; // Marrone scuro per il testo (uniforme con altre pagine)
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #8b5e3b; // Marrone chiaro per i titoli
   }
+
+  p {
+    font-size: 1rem;
+  }
+}
 
 .info-bottom {
   max-width: 800px;
@@ -167,3 +174,20 @@ router-outlet {
   }
 }
 
+.back-wrapper {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.cta-button.back {
+  background: #f4d03f;
+  color: #3a3a3a;
+  font-weight: bold;
+  padding: 10px 26px;
+  border-radius: 6px;
+  transition: 0.3s;
+
+  &:hover {
+    background: #e8c02c;
+  }
+}
