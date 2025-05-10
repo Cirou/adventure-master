@@ -24,6 +24,9 @@ import { LinguaggiComponent } from './app/pages/guide/linguaggi/linguaggi.compon
 import { NavaleComponent } from './app/pages/guide/navale/navale.component';
 import { NuotareComponent } from './app/pages/guide/nuotare/nuotare.component';
 import { RankComponent } from './app/pages/guide/rank/rank.component';
+import { MercatoComponent } from './app/pages/guide/mercato/mercato.component';
+import { PostaComponent } from './app/pages/guide/posta/posta.component';
+import { ComandiComponent } from './app/pages/guide/comandi/comandi.component';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -51,6 +54,9 @@ bootstrapApplication(AppComponent, {
       { path: 'gioco/guide/incantare', component: IncantareComponent },
       { path: 'gioco/guide/linguaggi', component: LinguaggiComponent },
       { path: 'gioco/guide/navale', component: NavaleComponent },
+      { path: 'gioco/guide/mercato', component: MercatoComponent },
+      { path: 'gioco/guide/posta', component: PostaComponent },
+      { path: 'gioco/guide/comandi', component: ComandiComponent },
       { path: '**', redirectTo: '' }
     ])
   ]

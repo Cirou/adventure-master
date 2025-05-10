@@ -1,3 +1,28 @@
 .hero {
   background: url('/images/guide/rank.png') center/cover no-repeat;
 }
+
+.books-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;          // spazio fra immagine e lista
+  margin-top: 10px;   // un po’ di respiro dal testo soprastante
+}
+
+.book-list-img {
+  width: 180px;       // adatta a piacere
+  height: auto;
+  border: 4px solid #d4b27e;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.book-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.book-list li {
+  margin-bottom: 6px;
+}
