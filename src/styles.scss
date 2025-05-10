@@ -191,3 +191,19 @@ router-outlet {
     background: #e8c02c;
   }
 }
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  // centra le righe di immagini
+  gap: 16px;                // spazio orizzontale e verticale tra le immagini
+  padding: 16px;            // padding interno al container
+}
+
+.image-grid img {
+  flex: 0 0 auto;           // non si allungano per riempire
+  display: block;
+  border: 4px solid #d4b27e;           // cornice sabbia/dorata
+  border-radius: 8px;                  // angoli arrotondati
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
