@@ -14,21 +14,40 @@
 </div>
 
 <div class="carousel">
+    
     <button class="carousel-nav prev" (click)="prevSlide()">⮜</button>
 
     <div class="carousel-window">
         <div class="carousel-track" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
             <div class="carousel-slide" *ngFor="let classe of classi" [ngClass]="classe.nome.toLowerCase()">
                 <h2 class="class-name">{{ classe.nome }}</h2>
-                <p class="class-lore">“{{ classe.racconto }}”</p>
-                <img [src]="classe.immagine" [alt]="classe.nome" />
-                <section class="info-bottom">
-                    <p>{{ classe.descrizione }}</p>
-                </section>
+                <div class="slide-body">
+                    <img [src]="classe.immaginegdr" [alt]="classe.nome" />
+                    <section class="info-bottom">
+                        <p>{{ classe.descrizione }}</p>
+                    </section>
+                </div>
+                <div class="guide-sections">
+                    <ng-container *ngFor="let sec of classe.guida">
+                        <!-- Titolo sezione -->
+                        <h3 *ngIf="sec.type === 'title'">{{ sec.content }}</h3>
+
+                        <!-- Paragrafo -->
+                        <p *ngIf="sec.type === 'paragraph'">{{ sec.content }}</p>
+
+                        <!-- Lista puntata -->
+                        <ul *ngIf="sec.type === 'list'">
+                            <li *ngFor="let item of sec.items">{{ item }}</li>
+                        </ul>
+
+                        <!-- Galleria immagini -->
+                        <div *ngIf="sec.type === 'images'" class="image-grid">
+                            <img *ngFor="let src of sec.items" [src]="src" />
+                        </div>
+                    </ng-container>
+                </div>
             </div>
         </div>
     </div>
-
-
     <button class="carousel-nav next" (click)="nextSlide()">⮞</button>
 </div>

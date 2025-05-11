@@ -11,7 +11,8 @@
 
 .carousel-window {
     overflow: hidden;
-    width: 100%;
+    width: 90%;
+    margin: auto;
 
     .class-name {
         font-size: 2rem;
@@ -36,7 +37,7 @@
     }
 
     .necromante img {
-        --glow-color:  rgb(101, 197, 142);
+        --glow-color: rgb(101, 197, 142);
     }
 
     .guerriero img {
@@ -44,7 +45,7 @@
     }
 
     .cacciatore img {
-        --glow-color: rgb(229, 151, 12);// verde foresta
+        --glow-color: rgb(229, 151, 12); // verde foresta
     }
 
     .berserker img {
@@ -109,7 +110,7 @@
 
 .carousel-nav {
     position: absolute;
-    top: 50%;
+    top: 20%;
     transform: translateY(-50%);
     background: none;
     border: none;
@@ -158,6 +159,80 @@
         &.active {
             background: #8b5e3b;
             color: white;
+        }
+    }
+}
+
+.carousel-slide {
+
+    .slide-body {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        margin: 20px 40px;
+    }
+
+    .slide-body img {
+        flex: 0 0 40%;
+        max-width: 100%;
+        height: auto;
+        margin: 0; // override del margin auto
+        object-fit: contain;
+    }
+
+    .slide-body .info-bottom {
+        flex: 1;
+        padding: 0; // rimuove eventuali padding ereditati
+        background: none; // se vuoi togliere sfondo semitrasp
+        box-shadow: none; // se vuoi togliere shadow
+        text-align: left;
+    }
+}
+
+.guide-sections {
+
+    text-align: left;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9); // Sfondo bianco semi-trasparente per risaltare
+    padding: 10px 40px;
+    color: #8b5e3b;
+    margin-top: 40px;
+
+    h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        color: #8b5e3b;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 10px;
+        color: #3c2a1e;
+    }
+
+    ul {
+        list-style: disc inside;
+        margin-bottom: 20px;
+
+        li {
+            margin-bottom: 6px;
+        }
+    }
+
+    .image-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+        margin-top: 10px;
+
+        img {
+            flex: 0 0 200px;
+            max-width: 100%;
+            border: 4px solid #d4b27e;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
     }
 }

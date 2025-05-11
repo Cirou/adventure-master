@@ -1,6 +1,18 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+interface GuidaSection {
+  type: 'title' | 'paragraph' | 'list' | 'images';
+  content?: string;        // per title e paragraph
+  items?: string[];        // per list e images (liste di stringhe o src)
+}
+interface Classe {
+  nome: string;
+  immaginegdr: string;
+  descrizione: string;
+  guida: GuidaSection[];
+}
+
 @Component({
   selector: 'app-classi',
   standalone: true,
@@ -10,91 +22,274 @@ import { CommonModule } from '@angular/common';
 })
 export class ClassiComponent {
 
-  classi = [
+  classi: Classe[] = [
     {
-      nome: 'Arcanista',
-      immagine: 'images/classi/arcanist.png',
-      racconto: `Nel cuore della Biblioteca Sigillata, dietro dieci porte senza serratura, esiste una stanza in cui il tempo non scorre. Lì, Lirael cammina a occhi chiusi. Le formule si scrivono da sole al suo passaggio, e l’Etere la osserva come farebbe con una divinità caduta.
-  
-  Nessuno sa da dove provenga. Alcuni dicono che sia nata da un esperimento fallito della Gilda. Altri, che sia il sogno di un arcanista morto, mai svanito del tutto.
-  
-  Ma ciò che è certo è che l’Arcanista non lancia magie. Lei ridefinisce le regole.`,
-      descrizione: 'L’Arcanista è un canalizzatore puro dell’Etere, capace di modellarlo in formule complesse, scudi temporanei, esplosioni controllate o illusioni destabilizzanti. È la classe con la maggiore padronanza teorica della materia arcana e spesso l’unica a comprendere davvero come l’Etere reagisca a certi stimoli. A distanza domina il campo, ma resta fragile fisicamente. Tuttavia, ciò che gli manca in armatura lo compensa con potenza distruttiva.'
-    },
-
-    {
-      nome: 'Bardo',
-      immagine: 'images/classi/bard.png',
-      racconto: `La leggenda vuole che ci sia stato un assedio in cui i difensori erano sul punto di cedere. Le torce erano spente, le lame spezzate, i cuori vuoti. Poi, qualcuno iniziò a suonare. Una nota sola. Seguita da un’altra. E un’altra ancora.
-  
-  Si dice che Kaen non parli mai. Ma che ogni sua canzone sia un frammento di futuro, rubato all’Etere stesso. Le sue melodie portano confusione, coraggio, caos. Nessuno ricorda la sua faccia. Ma tutti hanno una canzone in testa che non riescono a togliersi.
-  
-  Il Bardo non canta per noi. Canta per il mondo. Affinché non dimentichi.`,
-      descrizione: 'Il Bardo è un combattente dell’anima. Usa strumenti musicali, parole o semplici gesti per influenzare il morale degli alleati e la lucidità dei nemici. Può potenziare l’attacco di un gruppo, rafforzarne la volontà o generare confusione tra le file avversarie. Ogni effetto ha un ritmo, ogni nota una funzione. Il Bardo agisce dove le spade non arrivano, creando armonia o dissonanza a seconda del momento.'
+      nome: 'Guerriero',
+      immaginegdr: 'images/classi/warrior.png',
+      descrizione: 'Il Guerriero incarna la potenza fisica e la determinazione dell’uomo in simbiosi con l’Etere. La sua armatura, spesso incisa con rune di protezione, amplifica la sua resistenza e lo rende un baluardo sul campo di battaglia. Non è solo un picchiatore: è stratega, guardiano e scudo vivente. In prima linea, assorbe danni che distruggerebbero un villaggio. Ogni sua carica è una dichiarazione di volontà: l’umanità non arretra.',
+      guida: [
+        { type: 'title', content: 'GUIDA AL GUERRIERO' },
+        { type: 'paragraph', content: 'Esperto combattente dedito all’arte della guerra. È l’unica classe in grado di indossare armature di piastre e scaglie…' },
+        {
+          type: 'list', items: [
+            'Può utilizzare tutti i colpi speciali delle armi',
+            'Può indossare gli scudi'
+          ]
+        },
+        { type: 'paragraph', content: 'Skill di classe consigliate:' },
+        {
+          type: 'list', items: [
+            'Tattiche Combattive',
+            'Parare',
+            'Combattive',
+            'Anatomia',
+            'Curare Ferite',
+            'Resistenza alla magia'
+          ]
+        },
+        {
+          type: 'images', items: [
+            'images/classi/warrior1.png']
+        }
+      ]
     },
     {
       nome: 'Berserker',
-      immagine: 'images/classi/berserker.png',
-      racconto: `Nelle miniere eteriche proibite, là dove il cristallo corrompe anche la pietra, si udì un ruggito. Non umano. Non animale. Qualcosa che la terra cercò di dimenticare. Poi uscì da lì, coperto di sangue e luce, e si mise a ridere.
-  
-  Thorkan non ha maestri. Non ha ricordi. Il suo nome è inciso su una pietra che arde da sola, nel deserto rosso del Sud. Ogni volta che combatte, una parte di lui si dissolve nell’Etere. Ma ogni volta ritorna, più affamato, più veloce.
-  
-  Il Berserker non vive nel tempo. È una cicatrice nel tessuto stesso della realtà.`,
-      descrizione: 'Brutale, impetuoso, indomabile. Il Berserker non controlla l’Etere: lo lascia esplodere attraverso di sé. In combattimento entra in uno stato di trance che potenzia muscoli e istinti. I suoi attacchi sono devastanti, ma non caotici: dietro l’ira c’è una forma di lucidità predatoria. È in grado di sopravvivere a colpi mortali e combattere a lungo dopo aver subito ferite gravi. La sua presenza sul campo incute paura persino agli alleati.'
+      immaginegdr: 'images/classi/berserker.png',
+      descrizione: 'Brutale, impetuoso, indomabile. Il Berserker non controlla l’Etere: lo lascia esplodere attraverso di sé. In combattimento entra in uno stato di trance che potenzia muscoli e istinti. I suoi attacchi sono devastanti, ma non caotici: dietro l’ira c’è una forma di lucidità predatoria. È in grado di sopravvivere a colpi mortali e combattere a lungo dopo aver subito ferite gravi. La sua presenza sul campo incute paura persino agli alleati.',
+      guida: [
+        { type: 'title', content: 'GUIDA AL BERSERKER' },
+        { type: 'paragraph', content: 'Combattente versatile in grado di causare ingenti danni e supportare il gruppo tramite l’etere rilasciato dai suoi impetuosi urli.' },
+        { type: 'paragraph', content: 'Può indossare tutte le tipologie di armature ad eccezione delle piastre e scaglie. È l’unico a poter indossare l’armatura da berserker.' },
+        { type: 'paragraph', content: 'È in grado di canalizzare l’etere e liberarlo sotto forma di possenti urli in grado di influenzare creature, avversari e compagni.' },
+        { type: 'paragraph', content: 'Per utilizzare le proprie abilità di classe è necessario accumulare “Rabbia” che influenzerà l’efficacia delle abilità. La rabbia può essere generata tramite i colpi inflitti.' },
+        { type: 'paragraph', content: 'Ottimo supporto e guerriero d’assalto, ricercato da molti gruppi.' },
+        {
+          type: 'list', items: [
+            'Può utilizzare tutti i colpi speciali delle armi',
+            'Può indossare gli scudi'
+          ]
+        },
+        { type: 'paragraph', content: 'Skill di classe consigliate:' },
+        {
+          type: 'list', items: [
+            'Tattiche Combattive',
+            'Parare',
+            'Combattive',
+            'Anatomia',
+            'Curare Ferite',
+            'Resistenza alla magia'
+          ]
+        },
+        {
+          type: 'images', items: [
+            'images/classi/berserker1.png'
+          ]
+        }
+      ]
     },
     {
-      nome: 'Cacciatore',
-      immagine: 'images/classi/archer.png',
-      racconto: `Nessuno l’ha mai sentita arrivare. Solo il battito d’ali di una creatura mai vista prima, un’eco dorata tra i rami, e poi il silenzio.
-
-Lei lo chiama Ash, ma Ash non è un animale. È Etere che ha preso forma, nato dal legame con la sua anima. Il Cacciatore non addestra: crea. Non uccide per sopravvivere: colpisce per ristabilire un equilibrio.
-
-Si racconta che provenga dalle terre selvagge a ovest di Clover, dove la natura ha inghiottito città e confini. Là dove gli altri vedono un mondo perduto, lui vede un mondo sveglio.
-
-Ogni colpo è una scelta. Ogni creatura che lo accompagna è un ricordo.
-
-Il Cacciatore non è mai solo. E se lo vedi… non sei più al sicuro.`,
-      descrizione: 'Il Cacciatore è un arciere legato all’Etere vivente, capace di evocare famigli eterici che lo affiancano in battaglia. Preciso e furtivo, controlla il campo a distanza sfruttando sinergie tra frecce incantate e creature arcane. Il suo potere nasce dal legame con la natura e dall’istinto affinato nella solitudine dei territori selvaggi.'
-    },
-    {
-      nome: 'Curatore Arcano',
-      immagine: 'images/classi/healer.png',
-      racconto: `Quando tutto tace e persino la speranza cede il passo, lui arriva. Senza nome, senza volto, solo una veste bianca che brilla appena. Le sue mani tremano, non per paura, ma per il peso che portano: il confine tra vita e oblio.
-  
-  Jano non cura i corpi: li convince. Li persuade che è ancora possibile. La sua voce non è mai alta, ma ogni volta che la pronuncia, il mondo sembra respirare un po’ meglio.
-  
-  Il Curatore Arcano è ciò che resta quando il dolore si rifiuta di vincere.`,
-      descrizione: 'Discepolo della luce eterica, il Curatore Arcano è il fulcro del gruppo. Guarisce ferite, rimuove maledizioni, rafforza le difese altrui con incantamenti sottili e potenti. Alcuni curatori più esperti sono anche in grado di riportare in vita un compagno caduto, se l’Etere lo consente. La sua magia non è passiva: può infliggere danni purificanti a chi usa energie oscure. Ovunque vada, porta conforto, equilibrio e speranza.'
-    },
-    {
-      nome: 'Guerriero',
-      immagine: 'images/classi/warrior.png',
-      racconto: `C’è una strada che nessuno osa più percorrere. La chiamano la Via dei Giuramenti, e al suo termine sorge una statua... che respira. Si narra che Agramar vi sia giunto una notte, con l’armatura rotta e gli occhi spenti, e che lì abbia affrontato la sua ultima battaglia. Ma il suo corpo non fu mai ritrovato.
-  
-  Da allora, ogni volta che Clover è in pericolo, la statua sembra mutare posizione. La sua spada punta a nord, o a est, secondo i venti della guerra. Nessuno lo ha più visto in volto, ma molti giurano di aver sentito il rintocco dei suoi passi sulla pietra.
-  
-  Il Warrior non cerca la gloria. Egli è l’eco di tutte le promesse non mantenute.`,
-      descrizione: 'Il Guerriero incarna la potenza fisica e la determinazione dell’uomo in simbiosi con l’Etere. La sua armatura, spesso incisa con rune di protezione, amplifica la sua resistenza e lo rende un baluardo sul campo di battaglia. Non è solo un picchiatore: è stratega, guardiano e scudo vivente. In prima linea, assorbe danni che distruggerebbero un villaggio. Ogni sua carica è una dichiarazione di volontà: l’umanità non arretra.'
-    },
-    {
-      nome: 'Necromante',
-      immagine: 'images/classi/necromancer.png',
-      racconto: `Nel cuore della notte, tra le nebbie che avvolgono i campi dimenticati della Vecchia Sosaria, un sussurro percorre la terra come un battito antico. Elhan cammina scalzo tra i corpi, non per pietà, ma per memoria. Ogni ossa spezzata, ogni volto annerito dal tempo, porta con sé un frammento d’Etere che i più ignorano. Ma non lui.
-  
-  Le sue dita si muovono nell’aria come artigli sul velluto, e la realtà si piega. Non è resurrezione, non è magia. È qualcosa di più oscuro, più antico: è connessione. Il Necromante non comanda i morti. Li ascolta. E da quell’ascolto, trae alleati, segreti, verità che nessun vivente osa pronunciare.
-  
-  Dove cammina, il vento si ritrae. Dove parla, il silenzio obbedisce.`,
-      descrizione: 'Il Necromante è uno studioso delle profondità dell’Etere, capace di infonderlo nei corpi dei defunti per animarli come servitori o strumenti. Non si limita a evocare: ascolta l’eco dei morti, ne assorbe il sapere, li piega al proprio volere. Le sue magie infliggono danni diretti manipolando l’Etere presente negli esseri viventi, causando corruzione interiore. Un maestro della decadenza e della rinascita artificiale, temuto per ciò che sa, non solo per ciò che fa.'
+      nome: 'Bardo',
+      immaginegdr: 'images/classi/bard.png',
+      descrizione: 'Il Bardo è un combattente dell’anima. Usa strumenti musicali, parole o semplici gesti per influenzare il morale degli alleati e la lucidità dei nemici. Può potenziare l’attacco di un gruppo, rafforzarne la volontà o generare confusione tra le file avversarie. Ogni effetto ha un ritmo, ogni nota una funzione. Il Bardo agisce dove le spade non arrivano, creando armonia o dissonanza a seconda del momento.',
+      guida: [
+        { type: 'title', content: 'GUIDA AL BARDO' },
+        { type: 'paragraph', content: 'Classe di supporto versatile in grado di debilitare le creature tramite le skills bardiche, potenziare gli alleati o infliggere danni tramite l’etere infuso nelle sue note.' },
+        { type: 'paragraph', content: 'Può indossare tutte le tipologie di armature sino alla Maglia/Anelli.' },
+        { type: 'paragraph', content: 'Per utilizzare, potenziare e migliorare le abilità di classe è necessario accumulare “Note Eteriche”, generate tramite Pacificare, Provocare e Dissonanza.' },
+        { type: 'paragraph', content: 'Supporto indispensabile per ogni gruppo.' },
+        {
+          type: 'list', items: [
+            'Può utilizzare il primo colpo speciale delle armi',
+            'Può indossare gli scudi'
+          ]
+        },
+        { type: 'paragraph', content: 'Skill di classe consigliate:' },
+        {
+          type: 'list', items: [
+            'Suonare',
+            'Provocare',
+            'Pacificare',
+            'Dissonanza'
+          ]
+        },
+        {
+          type: 'images', items: [
+            'images/classi/bard1.png'
+          ]
+        }
+      ]
     },
     {
       nome: 'Ladro',
-      immagine: 'images/classi/rogue.png',
-      racconto: `Le porte non sono mai chiuse. I segreti non sono mai al sicuro. Le verità... sono sempre troppo in vista.
-  
-  Elion non ruba per guadagno. Ruba per equilibrio. C’è chi lo accusa di omicidi che non ha mai commesso. C’è chi lo ringrazia per furti che non ha mai pianificato. Nessuno sa chi sia davvero. Ma tutti temono una sola cosa: svegliarsi e accorgersi che ciò che credevano immutabile… è svanito.
-  
-  Il Ladro non ha un’ombra. È lui stesso l’ombra...`,
-      descrizione: 'Il Ladro è un maestro dell’occultamento, delle trappole, dell’infiltrazione. Usa l’Etere per distorcere la percezione altrui, camminare tra le ombre, manipolare serrature e menti. In combattimento è rapido, preciso, letale. I suoi attacchi mirano ai punti deboli, ai tendini, alla volontà. Ma è fuori dal combattimento che il Ladro mostra il suo vero valore: in ogni segreto svelato, in ogni tesoro rubato, in ogni volta che non è stato visto.'
+      immaginegdr: 'images/classi/rogue.png',
+      descrizione: 'Il Ladro è un maestro dell’occultamento, delle trappole, dell’infiltrazione. Usa l’Etere per distorcere la percezione altrui, camminare tra le ombre, manipolare serrature e menti. In combattimento è rapido, preciso, letale. I suoi attacchi mirano ai punti deboli, ai tendini, alla volontà. Ma è fuori dal combattimento che il Ladro mostra il suo vero valore: in ogni segreto svelato, in ogni tesoro rubato, in ogni volta che non è stato visto.',
+      guida: [
+        { type: 'title', content: 'GUIDA AL LADRO' },
+        { type: 'paragraph', content: 'Classe combattente in grado di utilizzare sia armi corpo a corpo che a distanza, sfrutta le ombre e le armi corte per colpire letalmente i nemici.' },
+        { type: 'paragraph', content: 'Può utilizzare tutte le tipologie di armature sino alla Maglia/Anelli.' },
+        { type: 'paragraph', content: 'Tramite le sue abilità è in grado di colpire di nascosto i punti deboli dei nemici infliggendo ingenti danni.' },
+        { type: 'paragraph', content: 'Per utilizzare, potenziare e migliorare le abilità di classe è necessario accumulare cariche di “Letalità”, generate tramite i colpi inflitti o tramite l’abilità [Mutilare].' },
+        { type: 'paragraph', content: 'Ottimo combattente, fondamentale per raccogliere i tesori nascosti nei bauli!' },
+        {
+          type: 'list', items: [
+            'Può utilizzare tutti i colpi speciali delle armi',
+            'Non può utilizzare gli scudi'
+          ]
+        },
+        { type: 'paragraph', content: 'Skill di classe consigliate:' },
+        {
+          type: 'list', items: [
+            'Tattiche Combattive',
+            'Nascondersi',
+            'Maneggiare Coltelli',
+            'Anatomia',
+            'Curare Ferite',
+            'Muoversi Silenziosamente',
+            'Avvelenare'
+          ]
+        },
+        {
+          type: 'images', items: [
+            'images/classi/rogue1.png'
+          ]
+        }
+      ]
+    },
+    {
+      nome: 'Cacciatore',
+      immaginegdr: 'images/classi/archer.png',
+      descrizione: 'Il Cacciatore è un arciere legato all’Etere vivente, capace di evocare famigli eterici che lo affiancano in battaglia. Preciso e furtivo, controlla il campo a distanza sfruttando sinergie tra frecce incantate e creature arcane. Il suo potere nasce dal legame con la natura e dall’istinto affinato nella solitudine dei territori selvaggi.',
+      guida: [
+        { type: 'title', content: 'GUIDA AL CACCIATORE' },
+        { type: 'paragraph', content: 'Combattente specializzato nel combattimento a distanza che non disdegna l’utilizzo delle armi corpo a corpo.' },
+        { type: 'paragraph', content: 'È in grado di canalizzare l’etere per aumentare l’efficacia delle munizioni presente nella sua faretra o creare famigli eterici per supportarlo in battaglia.' },
+        { type: 'paragraph', content: 'Può utilizzare tutte le tipologie di armature sino alla Maglia/Anelli.' },
+        { type: 'paragraph', content: 'Può potenziare le sue abilità tramite le cariche di “precisione” generabili tramite i colpi inflitti con dardi o frecce.' },
+        {
+          type: 'list', items: [
+            'Può utilizzare tutti i colpi speciali delle armi',
+            'Non può utilizzare scudi'
+          ]
+        },
+        { type: 'paragraph', content: 'Skill di classe consigliate:' },
+        {
+          type: 'list', items: [
+            'Tattiche Combattive',
+            'Mirare',
+            'Anatomia',
+            'Zoologia',
+            'Addestrare animali',
+            'Veterinaria'
+          ]
+        },
+        {
+          type: 'images', items: [
+            'images/classi/archer1.png'
+          ]
+        }
+      ]
+    },
+    {
+      nome: 'Curatore Arcano',
+      immaginegdr: 'images/classi/healer.png',
+      descrizione: 'Discepolo della luce eterica, il Curatore Arcano è il fulcro del gruppo. Guarisce ferite, rimuove maledizioni, rafforza le difese altrui con incantamenti sottili e potenti. Alcuni curatori più esperti sono anche in grado di riportare in vita un compagno caduto, se l’Etere lo consente. La sua magia non è passiva: può infliggere danni purificanti a chi usa energie oscure. Ovunque vada, porta conforto, equilibrio e speranza.',
+      guida: [
+        { type: 'title', content: 'GUIDA AL CURATORE ARCANO' },
+        { type: 'paragraph', content: 'Studioso in grado di canalizzare l’etere in energie curative in grado di supportare i compagni in battaglia e risanare le loro ferite.' },
+        { type: 'paragraph', content: 'È in grado di canalizzare l’etere durante la sua manipolazione ed accumularlo in cariche di “essenza” per liberarla in una esplosione curativa.' },
+        { type: 'paragraph', content: 'Può utilizzare tutte le tipologie di armature sino alla Maglia/Anelli ed impiegarle senza alcun malus alla meditazione.' },
+        { type: 'paragraph', content: 'Può accedere agli incantesimi tramite il libro del curatore.' },
+        {
+          type: 'list', items: [
+            'Non può utilizzare i colpi speciali delle armi',
+            'Non può utilizzare scudi'
+          ]
+        },
+        { type: 'paragraph', content: 'Skill di classe consigliate:' },
+        {
+          type: 'list', items: [
+            'Magia',
+            'Valutare Intelligenza',
+            'Meditare',
+            'Curare',
+            'Anatomia'
+          ]
+        },
+        {
+          type: 'images', items: [
+            'images/classi/healer1.png',
+            'images/classi/healer2.png'
+
+          ]
+        }
+      ]
+    },
+    {
+      nome: 'Arcanista',
+      immaginegdr: 'images/classi/arcanist.png',
+      descrizione: 'L’Arcanista è un canalizzatore puro dell’Etere, capace di modellarlo in formule complesse, scudi temporanei, esplosioni controllate o illusioni destabilizzanti. È la classe con la maggiore padronanza teorica della materia arcana e spesso l’unica a comprendere davvero come l’Etere reagisca a certi stimoli. A distanza domina il campo, ma resta fragile fisicamente. Tuttavia, ciò che gli manca in armatura lo compensa con potenza distruttiva.',
+      guida: [
+        { type: 'title', content: 'GUIDA ALL’ARCANISTA' },
+        { type: 'paragraph', content: 'Studioso in grado di canalizzare l’etere in forme elementali. È in grado di utilizzare l’elemento del fuoco, del freddo, dell’energia e della terra.' },
+        { type: 'paragraph', content: 'È in grado di accumulare cariche di “Concentrazione” per cambiare o potenziare gli effetti dei suoi incantesimi. Possono essere generate tramite l’utilizzo di incantesimi o meditando.' },
+        { type: 'paragraph', content: 'Può utilizzare tutte le tipologie di armature sino alla borchiata che fornirà un malus alla meditazione.' },
+        { type: 'paragraph', content: 'Può accedere alla lista degli incantesimi tramite il comando [magie' },
+        { type: 'paragraph', content: 'Può interagire con le Fonti Arcane, scegliendo l’elemento in cui canalizzare l’etere.' },
+        {
+          type: 'list', items: [
+            'Non può utilizzare i colpi speciali delle armi',
+            'Non può utilizzare scudi'
+          ]
+        },
+        { type: 'paragraph', content: 'Skill di classe consigliate:' },
+        {
+          type: 'list', items: [
+            'Magia',
+            'Valutare Intelligenza',
+            'Meditare',
+            'Identificare Oggetti (potenzia gli incantesimi)'
+          ]
+        },
+        {
+          type: 'images', items: [
+            'images/classi/arcanist1.png',
+            'images/classi/arcanist2.png'
+          ]
+        }
+      ]
+    },
+    {
+      nome: 'Necromante',
+      immaginegdr: 'images/classi/necromancer.png',
+      descrizione: 'Il Necromante è uno studioso delle profondità dell’Etere, capace di infonderlo nei corpi dei defunti per animarli come servitori o strumenti. Non si limita a evocare: ascolta l’eco dei morti, ne assorbe il sapere, li piega al proprio volere. Le sue magie infliggono danni diretti manipolando l’Etere presente negli esseri viventi, causando corruzione interiore. Un maestro della decadenza e della rinascita artificiale, temuto per ciò che sa, non solo per ciò che fa.',
+      guida: [
+        { type: 'title', content: 'GUIDA AL NECROMANTE' },
+        { type: 'paragraph', content: 'Studioso in grado di canalizzare l’etere all’interno di corpi inanimati e specializzato nell’utilizzo degli incanti velenosi.' },
+        { type: 'paragraph', content: 'È in grado di accumulare cariche “necromantiche” per utilizzare o alterare l’effetto dei propri incantesimi. Possono essere generate tramite l’utilizzo di incantesimi, meditando o tramite la skill Ascoltare gli Spiriti.' },
+        { type: 'paragraph', content: 'Può utilizzare tutte le tipologie di armature sino alle ossa senza alcun malus alla meditazione.' },
+        {
+          type: 'list', items: [
+            'Non può utilizzare i colpi speciali delle armi',
+            'Non può utilizzare scudi',
+            'Non può curarsi utilizzando le bende'
+          ]
+        },
+        { type: 'paragraph', content: 'Skill di classe consigliate:' },
+        {
+          type: 'list', items: [
+            'Necromanzia',
+            'Ascoltare gli Spiriti',
+            'Meditare',
+            'Avvelenare'
+          ]
+        },
+        {
+          type: 'images', items: [
+            'images/classi/necromante1.png'
+          ]
+        }
+      ]
     }
   ];
 
