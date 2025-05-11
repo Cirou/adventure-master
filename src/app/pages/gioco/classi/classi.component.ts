@@ -222,6 +222,18 @@ export class ClassiComponent {
             'images/classi/healer2.png'
 
           ]
+        },
+        { type: 'title', content: 'COME FARE LE MACRO:' },
+        { type: 'paragraph', content: 'Immettendo nel campo KEY il mantra o nome custom sarà possibile poi richiamarlo tramite il comando [cs ed inserirlo nelle macro, esempio:' },
+        {
+          type: 'list', items: [
+            '[cs Curetta'
+          ]
+        },
+        {
+          type: 'images', items: [
+            'images/classi/healer3.png'
+          ]
         }
       ]
     },
@@ -286,7 +298,21 @@ export class ClassiComponent {
         },
         {
           type: 'images', items: [
-            'images/classi/necromante1.png'
+            'images/classi/necromancer1.png',
+            'images/classi/necromancer2.png'
+
+          ]
+        },
+        { type: 'title', content: 'COME FARE LE MACRO:' },
+        { type: 'paragraph', content: 'Immettendo nel campo KEY il mantra o nome custom sarà possibile poi richiamarlo tramite il comando [cs ed inserirlo nelle macro, esempio:' },
+        {
+          type: 'list', items: [
+            '[cs GettoAcido'
+          ]
+        },
+        {
+          type: 'images', items: [
+            'images/classi/necromancer3.png'
           ]
         }
       ]
