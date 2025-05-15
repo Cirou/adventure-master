@@ -227,7 +227,7 @@ export class ClassiComponent {
         { type: 'paragraph', content: 'Immettendo nel campo KEY il mantra o nome custom sarà possibile poi richiamarlo tramite il comando [cs ed inserirlo nelle macro, esempio:' },
         {
           type: 'list', items: [
-            '[cs Curetta'
+            '[cast Curetta'
           ]
         },
         {
@@ -307,7 +307,7 @@ export class ClassiComponent {
         { type: 'paragraph', content: 'Immettendo nel campo KEY il mantra o nome custom sarà possibile poi richiamarlo tramite il comando [cs ed inserirlo nelle macro, esempio:' },
         {
           type: 'list', items: [
-            '[cs GettoAcido'
+            '[cast GettoAcido'
           ]
         },
         {
