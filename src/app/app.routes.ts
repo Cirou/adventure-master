@@ -22,11 +22,13 @@ import { NavaleComponent } from './pages/guide/navale/navale.component';
 import { MercatoComponent } from './pages/guide/mercato/mercato.component';
 import { PostaComponent } from './pages/guide/posta/posta.component';
 import { ComandiComponent } from './pages/guide/comandi/comandi.component';
+import { StoriaComponent } from './pages/ambientazione/storia/storia.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'ambientazione', component: AmbientazioneComponent },
   { path: 'gioco', component: GiocoComponent },
+  { path: 'storia', component: StoriaComponent },
   { path: 'gioco/guide', component: GuideComponent },
   { path: 'gioco/guide/armi', component: ArmiComponent },
   { path: 'gioco/guide/rank', component: RankComponent },
