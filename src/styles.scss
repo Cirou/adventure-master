@@ -52,7 +52,7 @@ router-outlet {
 
 
 .hero {
-  height: 60vh;
+  height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -195,15 +195,335 @@ router-outlet {
 .image-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;  // centra le righe di immagini
-  gap: 16px;                // spazio orizzontale e verticale tra le immagini
-  padding: 16px;            // padding interno al container
+  justify-content: center; // centra le righe di immagini
+  gap: 16px; // spazio orizzontale e verticale tra le immagini
+  padding: 16px; // padding interno al container
 }
 
 .image-grid img {
-  flex: 0 0 auto;           // non si allungano per riempire
+  flex: 0 0 auto; // non si allungano per riempire
   display: block;
-  border: 4px solid #d4b27e;           // cornice sabbia/dorata
-  border-radius: 8px;                  // angoli arrotondati
+  border: 4px solid #d4b27e; // cornice sabbia/dorata
+  border-radius: 8px; // angoli arrotondati
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+// ===== CLASSI GLOBALI PER LAYOUT DI PAGINA =====
+
+// Hero section globale
+.page-hero {
+  color: #f4e4c1;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-bottom: 3px solid #8b6914;
+  margin-bottom: 2rem;
+  position: relative;
+
+  // Overlay scuro per migliorare la leggibilità del testo
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); // Overlay scuro semi-trasparente
+    z-index: 1;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2; // Mette il contenuto sopra l'overlay
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); // Ombra più forte
+      color: #f4d03f;
+      // Backup per maggiore contrasto
+      filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.9));
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-style: italic;
+      opacity: 0.95;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); // Ombra per il paragrafo
+    }
+  }
+}
+
+// Features cards layout globale
+.page-features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-feature {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  min-height: 180px;
+  text-align: center;
+  color: #2c1810;
+  border: 2px solid #8b6914;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #8b6914;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  p {
+    font-size: 1rem;
+    color: #3a3a3a;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .cta-button {
+    background: linear-gradient(135deg, #8b6914, #b8860b);
+    color: #f4e4c1;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      background: linear-gradient(135deg, #b8860b, #daa520);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// Content section globale
+.page-content-section {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #f9f5f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 2px solid #d4af37;
+
+  .section-block {
+    margin-bottom: 3rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      color: #8b6914;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      border-bottom: 2px solid #d4af37;
+      padding-bottom: 0.5rem;
+    }
+
+    p {
+      color: #3a3a3a;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+
+    // Elementi con card individuali
+    .item-card {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 8px;
+      border-left: 4px solid #8b6914;
+
+      h3 {
+        color: #8b6914;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      p {
+        margin-bottom: 0;
+        text-align: left;
+      }
+    }
+
+    // Sezione evidenziata
+    .highlighted-section {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+
+      p {
+        margin-bottom: 1rem;
+        font-style: italic;
+        color: #2c1810;
+        text-align: left;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+
+}
+
+// Call to action finale
+.final-cta {
+  max-width: 1000px;
+  margin: 3rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background: rgba(139, 105, 20, 0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 2px solid #8b6914;
+
+  h2 {
+    border-bottom: none;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+}
+
+// Responsive design globale
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 2rem 1rem;
+
+    .hero-content {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .page-features {
+    padding: 30px 10px;
+    gap: 15px;
+  }
+
+  .page-feature {
+    width: 90%;
+    max-width: 350px;
+    padding: 20px;
+
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+
+  .page-content-section {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+
+    .section-block {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        text-align: left;
+      }
+
+      .item-card {
+        padding: 1rem;
+
+        h3 {
+          font-size: 1.1rem;
+        }
+      }
+
+      .highlighted-section {
+        padding: 1rem;
+      }
+    }
+
+    .final-cta {
+      padding: 1.5rem;
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .page-feature {
+    width: 95%;
+    padding: 15px;
+
+    h2 {
+      font-size: 1.2rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .page-content-section {
+    .section-block {
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      .item-card h3 {
+        font-size: 1rem;
+      }
+    }
+  }
 }

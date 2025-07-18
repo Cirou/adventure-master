@@ -1,3 +1,52 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { AmbientazioneComponent } from './pages/ambientazione/ambientazione.component';
+import { GiocoComponent } from './pages/gioco/gioco.component';
+import { RegolamentoComponent } from './pages/regolamento/regolamento.component';
+import { DownloadComponent } from './pages/download/download.component';
+import { StirpiComponent } from './pages/stirpi/stirpi.component';
+import { LeggendeComponent } from './pages/ambientazione/leggende/leggende.component';
+import { GargoyleComponent } from './pages/ambientazione/leggende/gargoyle/gargoyle.component';
+import { DraghiComponent } from './pages/ambientazione/leggende/draghi/draghi.component';
+import { DemoniComponent } from './pages/ambientazione/leggende/demoni/demoni.component';
+import { CultistiComponent } from './pages/ambientazione/leggende/cultisti/cultisti.component';
+import { GuideComponent } from './pages/guide/guide/guide.component';
+import { ArmiComponent } from './pages/guide/armi/armi.component';
+import { RankComponent } from './pages/guide/rank/rank.component';
+import { CittadinanzaComponent } from './pages/guide/cittadinanza/cittadinanza.component';
+import { NuotareComponent } from './pages/guide/nuotare/nuotare.component';
+import { DiplomaziaComponent } from './pages/guide/diplomazia/diplomazia.component';
+import { IncantareComponent } from './pages/guide/incantare/incantare.component';
+import { LinguaggiComponent } from './pages/guide/linguaggi/linguaggi.component';
+import { NavaleComponent } from './pages/guide/navale/navale.component';
+import { MercatoComponent } from './pages/guide/mercato/mercato.component';
+import { PostaComponent } from './pages/guide/posta/posta.component';
+import { ComandiComponent } from './pages/guide/comandi/comandi.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'ambientazione', component: AmbientazioneComponent },
+  { path: 'gioco', component: GiocoComponent },
+  { path: 'gioco/guide', component: GuideComponent },
+  { path: 'gioco/guide/armi', component: ArmiComponent },
+  { path: 'gioco/guide/rank', component: RankComponent },
+  { path: 'gioco/guide/cittadinanza', component: CittadinanzaComponent },
+  { path: 'gioco/guide/nuotare', component: NuotareComponent },
+  { path: 'gioco/guide/diplomazia', component: DiplomaziaComponent },
+  { path: 'gioco/guide/incantare', component: IncantareComponent },
+  { path: 'gioco/guide/linguaggi', component: LinguaggiComponent },
+  { path: 'gioco/guide/navale', component: NavaleComponent },
+  { path: 'gioco/guide/mercato', component: MercatoComponent },
+  { path: 'gioco/guide/posta', component: PostaComponent },
+  { path: 'gioco/guide/comandi', component: ComandiComponent },
+  { path: 'regolamento', component: RegolamentoComponent },
+  { path: 'download', component: DownloadComponent },
+  { path: 'stirpi', component: StirpiComponent },
+  { path: 'leggende', component: LeggendeComponent },
+  { path: 'leggende/gargoyle', component: GargoyleComponent },
+  { path: 'leggende/draghi', component: DraghiComponent },
+  { path: 'leggende/demoni', component: DemoniComponent },
+  { path: 'leggende/cultisti', component: CultistiComponent },
+  // Add more routes as needed
+  { path: '**', redirectTo: '' } // Wildcard route for 404 page
+];

@@ -13,6 +13,12 @@ import { GildaAvventurieriComponent } from './app/pages/stirpi/gilda-avventurier
 import { TabulaRasaComponent } from './app/pages/ambientazione/tabula-rasa/tabula-rasa.component';
 import { CloverComponent } from './app/pages/ambientazione/clover/clover.component';
 import { EtereComponent } from './app/pages/ambientazione/etere/etere.component';
+import { PassatoPresenteComponent } from './app/pages/ambientazione/passato-presente/passato-presente.component';
+import { LeggendeComponent } from './app/pages/ambientazione/leggende/leggende.component';
+import { GargoyleComponent } from './app/pages/ambientazione/leggende/gargoyle/gargoyle.component';
+import { DraghiComponent } from './app/pages/ambientazione/leggende/draghi/draghi.component';
+import { DemoniComponent } from './app/pages/ambientazione/leggende/demoni/demoni.component';
+import { CultistiComponent } from './app/pages/ambientazione/leggende/cultisti/cultisti.component';
 import { GiocoComponent } from './app/pages/gioco/gioco.component';
 import { ClassiComponent } from './app/pages/gioco/classi/classi.component';
 import { ArmiComponent } from './app/pages/guide/armi/armi.component';
@@ -43,6 +49,12 @@ bootstrapApplication(AppComponent, {
       { path: 'tabula-rasa', component: TabulaRasaComponent },
       { path: 'clover', component: CloverComponent },
       { path: 'etere', component: EtereComponent },
+      { path: 'passato-presente', component: PassatoPresenteComponent },
+      { path: 'leggende', component: LeggendeComponent },
+      { path: 'leggende/gargoyle', component: GargoyleComponent },
+      { path: 'leggende/draghi', component: DraghiComponent },
+      { path: 'leggende/demoni', component: DemoniComponent },
+      { path: 'leggende/cultisti', component: CultistiComponent },
       { path: 'gioco', component: GiocoComponent },
       { path: 'classi-di-gioco', component: ClassiComponent },
       { path: 'gioco/guide', component: GuideComponent },
