@@ -5,11 +5,20 @@ import { GiocoComponent } from './pages/gioco/gioco.component';
 import { RegolamentoComponent } from './pages/regolamento/regolamento.component';
 import { DownloadComponent } from './pages/download/download.component';
 import { StirpiComponent } from './pages/stirpi/stirpi.component';
+import { StirpiSudComponent } from './pages/stirpi/stirpi-sud/stirpi-sud.component';
+import { StirpiNordComponent } from './pages/stirpi/stirpi-nord/stirpi-nord.component';
+import { StirpiOvestComponent } from './pages/stirpi/stirpi-ovest/stirpi-ovest.component';
+import { GildaAvventurieriComponent } from './pages/stirpi/gilda-avventurieri/gilda-avventurieri.component';
+import { TabulaRasaComponent } from './pages/ambientazione/tabula-rasa/tabula-rasa.component';
+import { CloverComponent } from './pages/ambientazione/clover/clover.component';
+import { EtereComponent } from './pages/ambientazione/etere/etere.component';
+import { PassatoPresenteComponent } from './pages/ambientazione/passato-presente/passato-presente.component';
 import { LeggendeComponent } from './pages/ambientazione/leggende/leggende.component';
 import { GargoyleComponent } from './pages/ambientazione/leggende/gargoyle/gargoyle.component';
 import { DraghiComponent } from './pages/ambientazione/leggende/draghi/draghi.component';
 import { DemoniComponent } from './pages/ambientazione/leggende/demoni/demoni.component';
 import { CultistiComponent } from './pages/ambientazione/leggende/cultisti/cultisti.component';
+import { ClassiComponent } from './pages/gioco/classi/classi.component';
 import { GuideComponent } from './pages/guide/guide/guide.component';
 import { ArmiComponent } from './pages/guide/armi/armi.component';
 import { RankComponent } from './pages/guide/rank/rank.component';
@@ -27,8 +36,20 @@ import { StoriaComponent } from './pages/ambientazione/storia/storia.component';
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'ambientazione', component: AmbientazioneComponent },
+  { path: 'storia-clover', component: StoriaComponent },
+  { path: 'stirpi', component: StirpiComponent },
+  { path: 'stirpi/sud', component: StirpiSudComponent },
+  { path: 'stirpi/nord', component: StirpiNordComponent },
+  { path: 'stirpi/ovest', component: StirpiOvestComponent },
+  { path: 'stirpi/avventurieri', component: GildaAvventurieriComponent },
+  { path: 'tabula-rasa', component: TabulaRasaComponent },
+  { path: 'clover', component: CloverComponent },
+  { path: 'etere', component: EtereComponent },
+  { path: 'passato-presente', component: PassatoPresenteComponent },
+  { path: 'regolamento', component: RegolamentoComponent },
+  { path: 'download', component: DownloadComponent },
   { path: 'gioco', component: GiocoComponent },
-  { path: 'storia', component: StoriaComponent },
+  { path: 'classi-di-gioco', component: ClassiComponent },
   { path: 'gioco/guide', component: GuideComponent },
   { path: 'gioco/guide/armi', component: ArmiComponent },
   { path: 'gioco/guide/rank', component: RankComponent },
@@ -41,14 +62,10 @@ export const routes: Routes = [
   { path: 'gioco/guide/mercato', component: MercatoComponent },
   { path: 'gioco/guide/posta', component: PostaComponent },
   { path: 'gioco/guide/comandi', component: ComandiComponent },
-  { path: 'regolamento', component: RegolamentoComponent },
-  { path: 'download', component: DownloadComponent },
-  { path: 'stirpi', component: StirpiComponent },
   { path: 'leggende', component: LeggendeComponent },
   { path: 'leggende/gargoyle', component: GargoyleComponent },
   { path: 'leggende/draghi', component: DraghiComponent },
   { path: 'leggende/demoni', component: DemoniComponent },
   { path: 'leggende/cultisti', component: CultistiComponent },
-  // Add more routes as needed
   { path: '**', redirectTo: '' } // Wildcard route for 404 page
 ];
