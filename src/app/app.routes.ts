@@ -36,7 +36,7 @@ import { StoriaComponent } from './pages/ambientazione/storia/storia.component';
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'ambientazione', component: AmbientazioneComponent },
-  { path: 'storia-clover', component: StoriaComponent },
+  { path: 'storia', component: StoriaComponent },
   { path: 'stirpi', component: StirpiComponent },
   { path: 'stirpi/sud', component: StirpiSudComponent },
   { path: 'stirpi/nord', component: StirpiNordComponent },

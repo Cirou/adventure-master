@@ -1,84 +1,83 @@
 .hero {
-    background: url('/images/banner.png') center/cover no-repeat;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    text-shadow: 2px 2px 5px black;
-  
-    .hero-content {
-      max-width: 600px;
-  
-      h1 {
-        font-size: 3rem;
-        margin-bottom: 10px;
-      }
-  
-      p {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-      }
-  
-      .cta-button {
-        background: #ffcc00;
-        padding: 10px 20px;
-        font-size: 1.2rem;
-        border: none;
-        cursor: pointer;
-        transition: 0.3s;
-        
-        &:hover {
-          background: #ffaa00;
-        }
-      }
+  background: url('/images/banner.png') center/cover no-repeat;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+
+  .hero-content {
+    max-width: 600px;
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
     }
-  }
-  
-  .about, .features, .intro {
-    text-align: center;
-    padding: 20px 20px;
-    color: #3e2f1a; // Marrone scuro per il testo (uniforme con altre pagine)
-  
-    h2 {
-      font-size: 2rem;
+
+    p {
+      font-size: 1.2rem;
       margin-bottom: 20px;
     }
-  
-    p {
-      font-size: 1.1rem;
+
+    .cta-button {
+      background: #ffcc00;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background: #ffaa00;
+      }
     }
   }
-  
-  .features {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    padding: 50px 20px;
-    border-radius: 10px; // Arrotonda gli angoli
+}
+
+.about,
+.features,
+.intro {
+  text-align: center;
+  padding: 20px 20px;
+  color: #3e2f1a; // Marrone scuro per il testo (uniforme con altre pagine)
+  max-width: 800px;
+  margin: auto;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
   }
-  
-  .feature {
-    background: rgba(255, 255, 255, 0.9); // Sfondo bianco semi-trasparente per risaltare
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); // Ombra per evidenziarle
-    width: 30%;
-    min-width: 250px;
-    text-align: center;
-    color: #3e2f1a; // Marrone scuro per il testo (uniforme con altre pagine)
-  
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      color: #8b5e3b; // Marrone chiaro per i titoli
-    }
-  
-    p {
-      font-size: 1rem;
-    }
+
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  border-radius: 10px; // Arrotonda gli angoli
+}
+
+.feature {
+  background: rgba(255, 255, 255, 0.9); // Sfondo bianco semi-trasparente per risaltare
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); // Ombra per evidenziarle
+  width: 40%;
+  min-width: 260px;
+  text-align: center;
+  color: #3e2f1a; // Marrone scuro per il testo (uniforme con altre pagine)
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #8b5e3b; // Marrone chiaro per i titoli
   }
-  
-  
+
+  p {
+    font-size: 1.2rem;
+  }
+}

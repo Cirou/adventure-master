@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balthazar&display=swap');
 
 @keyframes heroZoomIn {
   from {
@@ -30,6 +31,12 @@ body {
   display: block;
   font-family: 'Cinzel', serif;
   color: #3e2f1a;
+}
+
+// Regola globale per tutti i paragrafi
+p {
+  font-family: 'Balthazar', sans-serif;
+  font-size: 1.3rem;
 }
 
 router-outlet {
@@ -70,7 +77,6 @@ router-outlet {
     }
 
     p {
-      font-size: 1.2rem;
       margin-bottom: 20px;
     }
   }
@@ -92,7 +98,6 @@ router-outlet {
   }
 
   p {
-    font-size: 1.1rem;
     line-height: 1.6;
   }
 }
@@ -109,9 +114,6 @@ router-outlet {
     color: #8b5e3b; // Marrone chiaro per i titoli
   }
 
-  p {
-    font-size: 1rem;
-  }
 }
 
 .info-bottom {
@@ -291,7 +293,7 @@ router-outlet {
   }
 
   p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #3a3a3a;
     line-height: 1.6;
     margin-bottom: 20px;
@@ -351,7 +353,7 @@ router-outlet {
 
     p {
       color: #3a3a3a;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       line-height: 1.8;
       margin-bottom: 1rem;
       text-align: justify;
