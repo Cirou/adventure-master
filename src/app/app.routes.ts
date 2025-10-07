@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AmbientazioneComponent } from './pages/ambientazione/ambientazione.component';
+import { PrimipassiComponent } from './pages/primipassi/primipassi.component';
 import { GiocoComponent } from './pages/gioco/gioco.component';
 import { RegolamentoComponent } from './pages/regolamento/regolamento.component';
 import { DownloadComponent } from './pages/download/download.component';
@@ -11,6 +12,7 @@ import { StirpiOvestComponent } from './pages/stirpi/stirpi-ovest/stirpi-ovest.c
 import { GildaAvventurieriComponent } from './pages/stirpi/gilda-avventurieri/gilda-avventurieri.component';
 import { TabulaRasaComponent } from './pages/ambientazione/tabula-rasa/tabula-rasa.component';
 import { CloverComponent } from './pages/ambientazione/clover/clover.component';
+import { PericoliComponent } from './pages/ambientazione/pericoli/pericoli.component';
 import { EtereComponent } from './pages/ambientazione/etere/etere.component';
 import { PassatoPresenteComponent } from './pages/ambientazione/passato-presente/passato-presente.component';
 import { LeggendeComponent } from './pages/ambientazione/leggende/leggende.component';
@@ -32,10 +34,13 @@ import { MercatoComponent } from './pages/guide/mercato/mercato.component';
 import { PostaComponent } from './pages/guide/posta/posta.component';
 import { ComandiComponent } from './pages/guide/comandi/comandi.component';
 import { StoriaComponent } from './pages/ambientazione/storia/storia.component';
+import { AccountComponent } from './pages/account/account.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'ambientazione', component: AmbientazioneComponent },
+  { path: 'primipassi', component: PrimipassiComponent },
+  { path: 'account', component: AccountComponent },
   { path: 'storia', component: StoriaComponent },
   { path: 'stirpi', component: StirpiComponent },
   { path: 'stirpi/sud', component: StirpiSudComponent },
@@ -44,6 +49,7 @@ export const routes: Routes = [
   { path: 'stirpi/avventurieri', component: GildaAvventurieriComponent },
   { path: 'tabula-rasa', component: TabulaRasaComponent },
   { path: 'clover', component: CloverComponent },
+  { path: 'pericoli', component: PericoliComponent },
   { path: 'etere', component: EtereComponent },
   { path: 'passato-presente', component: PassatoPresenteComponent },
   { path: 'regolamento', component: RegolamentoComponent },

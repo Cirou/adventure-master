@@ -31,15 +31,18 @@
 ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 12px;
+    align-items: center;
 }
 
 ul li a {
     text-decoration: none;
     color: white;
-    font-size: 1.2rem;
-    padding: 10px;
+    font-size: 0.95rem;
+    padding: 8px;
     transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
 }
 
 a:hover {
@@ -47,15 +50,24 @@ a:hover {
 }
 
 .discord-button {
-    color: #97a6db !important;
+    background-color: #5865F2 !important;
+    color: white !important;
     padding: 8px 12px;
     border-radius: 5px;
     font-weight: bold;
     transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.discord-button svg {
+    vertical-align: middle;
 }
 
 .discord-button:hover {
-    color: #7081b9 !important;
+    background-color: #4752C4 !important;
+    color: white !important;
 }
 
 /* 📱 Responsive Design */

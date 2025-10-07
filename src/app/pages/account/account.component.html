@@ -1,0 +1,52 @@
+<div class="hero">
+  <div class="hero-content">
+    <h1>Richiesta Account</h1>
+    <p>Inizia la tua avventura su Adventure Master - Richiedi il tuo account.</p>
+  </div>
+</div>
+
+<section class="lore-section">
+  <h2>⚔️ Benvenuto su Adventure Master</h2>
+  
+  <!-- Success Message -->
+  <div class="success-message" *ngIf="showSuccessMessage">
+    <h3>✅ Richiesta Inviata con Successo!</h3>
+    <p>La tua richiesta di account è stata ricevuta. Ti contatteremo presto all'indirizzo email fornito.</p>
+  </div>
+
+  <p>
+    Tieni a mente che Adventure Master è un gioco di ruolo immersivo.
+    Dopo il login sarai su Sosaria e parlerai coerentemente con la storia che hai scelto per il tuo personaggio, sulla base del bg del gioco. Che tu sia un giocatore che ha provato molte versioni di Ultima Online, o che arrivi qui dopo una lunga storia di giochi testuali, ricorda sempre questo: il gioco si basa sulla comprensione delle meccaniche di Ultima Online e sulla capacità di interpretare un personaggio in questo contesto ruolistico. Entrambe le abilità sono importanti per giocare con noi.
+  </p>
+
+  <form class="account-form" action="https://formsubmit.co/adventuremasteruo@gmail.com" method="POST" *ngIf="!showSuccessMessage">
+    <!-- FormSubmit Configuration -->
+    <input type="hidden" name="_next" value="https://adventure-master.onrender.com/account?submitted=true">
+    <input type="hidden" name="_subject" value="Nuova Richiesta Account - Adventure Master">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" style="display:none">
+    
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required placeholder="tua.email@esempio.com">
+    </div>
+
+    <div class="form-group">
+      <label for="account">Nome Account</label>
+      <input type="text" id="account" name="account" required>
+    </div>
+
+    <div class="form-group">
+      <label for="character">Nome Personaggio</label>
+      <input type="text" id="character" name="character" required>
+    </div>
+
+    <button type="submit" class="cta-button">Invia Richiesta</button>
+  </form>
+</section>
+
+<section class="info-bottom">
+  <h2>Ecco qualche consiglio per giocare su Adventure Master</h2>
+  <p>Prima di iniziare, ti consigliamo di leggere la nostra guida per i primi passi.</p>
+  <button class="cta-button" routerLink="/primipassi">Vai ai Primi Passi</button>
+</section>
