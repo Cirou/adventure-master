@@ -19,7 +19,7 @@
     Dopo il login sarai su Sosaria e parlerai coerentemente con la storia che hai scelto per il tuo personaggio, sulla base del bg del gioco. Che tu sia un giocatore che ha provato molte versioni di Ultima Online, o che arrivi qui dopo una lunga storia di giochi testuali, ricorda sempre questo: il gioco si basa sulla comprensione delle meccaniche di Ultima Online e sulla capacità di interpretare un personaggio in questo contesto ruolistico. Entrambe le abilità sono importanti per giocare con noi.
   </p>
 
-  <form class="account-form" action="https://formsubmit.co/adventuremasteruo@gmail.com" method="POST" *ngIf="!showSuccessMessage" (ngSubmit)="onSubmit()" #accountForm>
+  <form class="account-form" action="https://formsubmit.co/adventuremasteruo@gmail.com" method="POST" *ngIf="!showSuccessMessage" (submit)="onSubmit($event)" #accountForm>
     <!-- FormSubmit Configuration -->
     <input type="hidden" name="_next" value="https://adventure-master.onrender.com/account?submitted=true">
     <input type="hidden" name="_subject" value="Nuova Richiesta Account - Adventure Master">
