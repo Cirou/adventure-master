@@ -43,6 +43,22 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 
+  .loading-message {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.9), rgba(255, 140, 0, 0.9));
+    border-radius: 8px;
+    text-align: center;
+    animation: pulse 1.5s ease-in-out infinite;
+
+    p {
+      margin: 0;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+  }
+
   .form-group {
     margin-bottom: 1.5rem;
 
@@ -68,6 +84,11 @@
         outline: none;
         border-color: #d4af37;
       }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
     }
   }
 
@@ -83,13 +104,27 @@
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
 
-    &:hover {
+    &:hover:not(:disabled) {
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(212, 175, 55, 0.5);
     }
 
-    &:active {
+    &:active:not(:disabled) {
       transform: translateY(0);
     }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
   }
 }

@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AccountComponent implements OnInit {
   showSuccessMessage = false;
+  isSubmitting = false;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -20,5 +21,10 @@ export class AccountComponent implements OnInit {
         this.showSuccessMessage = true;
       }
     });
+  }
+
+  onSubmit() {
+    this.isSubmitting = true;
+    // Il form viene inviato normalmente tramite l'action HTML
   }
 }

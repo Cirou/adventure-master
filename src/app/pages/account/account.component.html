@@ -19,29 +19,37 @@
     Dopo il login sarai su Sosaria e parlerai coerentemente con la storia che hai scelto per il tuo personaggio, sulla base del bg del gioco. Che tu sia un giocatore che ha provato molte versioni di Ultima Online, o che arrivi qui dopo una lunga storia di giochi testuali, ricorda sempre questo: il gioco si basa sulla comprensione delle meccaniche di Ultima Online e sulla capacità di interpretare un personaggio in questo contesto ruolistico. Entrambe le abilità sono importanti per giocare con noi.
   </p>
 
-  <form class="account-form" action="https://formsubmit.co/adventuremasteruo@gmail.com" method="POST" *ngIf="!showSuccessMessage">
+  <form class="account-form" action="https://formsubmit.co/adventuremasteruo@gmail.com" method="POST" *ngIf="!showSuccessMessage" (ngSubmit)="onSubmit()" #accountForm>
     <!-- FormSubmit Configuration -->
     <input type="hidden" name="_next" value="https://adventure-master.onrender.com/account?submitted=true">
     <input type="hidden" name="_subject" value="Nuova Richiesta Account - Adventure Master">
     <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="basic">
     <input type="text" name="_honey" style="display:none">
+    
+    <!-- Loading Message -->
+    <div class="loading-message" *ngIf="isSubmitting">
+      <p>⏳ Invio in corso...</p>
+    </div>
     
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required placeholder="tua.email@esempio.com">
+      <input type="email" id="email" name="email" required placeholder="tua.email@esempio.com" [disabled]="isSubmitting">
     </div>
 
     <div class="form-group">
       <label for="account">Nome Account</label>
-      <input type="text" id="account" name="account" required>
+      <input type="text" id="account" name="account" required [disabled]="isSubmitting">
     </div>
 
     <div class="form-group">
       <label for="character">Nome Personaggio</label>
-      <input type="text" id="character" name="character" required>
+      <input type="text" id="character" name="character" required [disabled]="isSubmitting">
     </div>
 
-    <button type="submit" class="cta-button">Invia Richiesta</button>
+    <button type="submit" class="cta-button" [disabled]="isSubmitting">
+      {{ isSubmitting ? 'Invio...' : 'Invia Richiesta' }}
+    </button>
   </form>
 </section>
 
