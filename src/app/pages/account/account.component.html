@@ -6,7 +6,7 @@
 </div>
 
 <section class="lore-section">
-  <h2>⚔️ Benvenuto su Adventure Master</h2>
+  <h2 *ngIf="!showSuccessMessage">⚔️ Benvenuto su Adventure Master</h2>
   
   <!-- Success Message -->
   <div class="success-message" *ngIf="showSuccessMessage">
@@ -14,7 +14,7 @@
     <p>La tua richiesta di account è stata ricevuta. Ti contatteremo presto all'indirizzo email fornito.</p>
   </div>
 
-  <p>
+  <p *ngIf="!showSuccessMessage">
     Tieni a mente che Adventure Master è un gioco di ruolo immersivo.
     Dopo il login sarai su Sosaria e parlerai coerentemente con la storia che hai scelto per il tuo personaggio, sulla base del bg del gioco. Che tu sia un giocatore che ha provato molte versioni di Ultima Online, o che arrivi qui dopo una lunga storia di giochi testuali, ricorda sempre questo: il gioco si basa sulla comprensione delle meccaniche di Ultima Online e sulla capacità di interpretare un personaggio in questo contesto ruolistico. Entrambe le abilità sono importanti per giocare con noi.
   </p>
