@@ -47,14 +47,26 @@
       <input type="text" id="character" name="character" required [disabled]="isSubmitting">
     </div>
 
+    <div class="form-group">
+      <label for="background">Background del Personaggio</label>
+      <textarea 
+        id="background" 
+        name="background" 
+        required 
+        [disabled]="isSubmitting"
+        placeholder="Racconta la storia del tuo personaggio: le sue origini, il suo passato, le sue motivazioni, i suoi obiettivi... Sii creativo e coerente con l'ambientazione di Sosaria!"
+        rows="8"></textarea>
+      <small class="form-hint">Scrivi almeno qualche riga per aiutarci a comprendere il tuo personaggio. Il background è fondamentale per il gioco di ruolo!</small>
+    </div>
+
     <button type="submit" class="cta-button" [disabled]="isSubmitting">
       {{ isSubmitting ? 'Invio...' : 'Invia Richiesta' }}
     </button>
   </form>
 </section>
 
-<section class="info-bottom">
+<div class="final-cta">
   <h2>Ecco qualche consiglio per giocare su Adventure Master</h2>
   <p>Prima di iniziare, ti consigliamo di leggere la nostra guida per i primi passi.</p>
   <button class="cta-button" routerLink="/primipassi">Vai ai Primi Passi</button>
-</section>
+</div>

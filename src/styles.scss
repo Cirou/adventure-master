@@ -116,26 +116,6 @@ router-outlet {
 
 }
 
-.info-bottom {
-  max-width: 800px;
-  margin: 20px auto;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); // Ombra per evidenziarle
-  background: rgba(255, 255, 255, 0.9); // Sfondo bianco semi-trasparente per risaltare
-  padding: 20px;
-  color: #8b5e3b;
-  text-align: center;
-  padding: 40px;
-  margin-top: 40px;
-  border-radius: 8px;
-
-  h2 {
-    font-size: 2rem;
-  }
-
-}
-
 .cta {
   text-align: center;
   background: linear-gradient(to right, #9c6745, #c49a5d); // Sfumatura dorata
