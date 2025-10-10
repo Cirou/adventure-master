@@ -43,6 +43,25 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 
+  .form-notice {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(255, 215, 0, 0.9));
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+
+    p {
+      margin: 0;
+      color: #2c2415;
+      font-size: 0.95rem;
+      
+      strong {
+        color: #1a1611;
+      }
+    }
+  }
+
   .loading-message {
     margin-bottom: 1.5rem;
     padding: 1rem;
@@ -70,7 +89,8 @@
     }
 
     input,
-    textarea {
+    textarea,
+    select {
       width: 100%;
       max-width: 100%;
       padding: 0.75rem;
@@ -90,6 +110,14 @@
 
       &:disabled {
         opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+
+    select {
+      cursor: pointer;
+      
+      &:disabled {
         cursor: not-allowed;
       }
     }

@@ -27,6 +27,11 @@
     <input type="hidden" name="_template" value="basic">
     <input type="text" name="_honey" style="display:none">
     
+    <!-- Required Fields Notice -->
+    <div class="form-notice">
+      <p><strong>Nota:</strong> Tutti i campi sono obbligatori per poter inviare la richiesta.</p>
+    </div>
+    
     <!-- Loading Message -->
     <div class="loading-message" *ngIf="isSubmitting">
       <p>⏳ Invio in corso...</p>
@@ -34,17 +39,27 @@
     
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required placeholder="tua.email@esempio.com" [disabled]="isSubmitting">
+      <input type="email" id="email" name="email" required placeholder="tua.email@esempio.com" [disabled]="isSubmitting" [(ngModel)]="formData.email">
     </div>
 
     <div class="form-group">
       <label for="account">Nome Account</label>
-      <input type="text" id="account" name="account" required [disabled]="isSubmitting">
+      <input type="text" id="account" name="account" required [disabled]="isSubmitting" [(ngModel)]="formData.account">
     </div>
 
     <div class="form-group">
       <label for="character">Nome Personaggio</label>
-      <input type="text" id="character" name="character" required [disabled]="isSubmitting">
+      <input type="text" id="character" name="character" required [disabled]="isSubmitting" [(ngModel)]="formData.character">
+    </div>
+
+    <div class="form-group">
+      <label for="characterClass">Classe del Personaggio</label>
+      <select id="characterClass" name="characterClass" required [disabled]="isSubmitting" [(ngModel)]="formData.characterClass">
+        <option value="">Seleziona una classe...</option>
+        <option *ngFor="let class of characterClasses" [value]="class.value">
+          {{ class.label }}
+        </option>
+      </select>
     </div>
 
     <div class="form-group">
@@ -55,12 +70,12 @@
         required 
         [disabled]="isSubmitting"
         placeholder="Racconta la storia del tuo personaggio: le sue origini, il suo passato, le sue motivazioni, i suoi obiettivi... Sii creativo e coerente con l'ambientazione di Sosaria!"
-        rows="8"></textarea>
-      <small class="form-hint">Scrivi almeno qualche riga per aiutarci a comprendere il tuo personaggio. Il background è fondamentale per il gioco di ruolo!</small>
+        rows="8"
+        [(ngModel)]="formData.background"></textarea>
     </div>
 
-    <button type="submit" class="cta-button" [disabled]="isSubmitting">
-      {{ isSubmitting ? 'Invio...' : 'Invia Richiesta' }}
+    <button type="submit" class="cta-button" [disabled]="isSubmitting || !isFormValid">
+      {{ isSubmitting ? 'Invio...' : (!isFormValid ? 'Completa tutti i campi' : 'Invia Richiesta') }}
     </button>
   </form>
 </section>

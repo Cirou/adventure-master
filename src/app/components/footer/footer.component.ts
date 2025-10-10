@@ -17,10 +17,10 @@ export class FooterComponent {
     this.audio.volume = this.volume;
   }
 
-  // Avvia l'audio alla prima interazione (scroll, clic, tasto premuto)
-  @HostListener('window:click')
-  @HostListener('window:scroll')
-  @HostListener('window:keydown')
+  // Avvia l'audio manualmente (non più automatico all'apertura del sito)
+  // @HostListener('window:click')
+  // @HostListener('window:scroll')
+  // @HostListener('window:keydown')
   startAudio() {
     if (!this.userInteracted) {
       this.audio.play().then(() => {
