@@ -63,6 +63,16 @@
     </div>
 
     <div class="form-group">
+      <label for="lineage">Stirpe</label>
+      <select id="lineage" name="lineage" required [disabled]="isSubmitting" [(ngModel)]="formData.lineage">
+        <option value="">Seleziona una stirpe...</option>
+        <option *ngFor="let lineage of lineages" [value]="lineage.value">
+          {{ lineage.label }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
       <label for="background">Background del Personaggio</label>
       <textarea 
         id="background" 

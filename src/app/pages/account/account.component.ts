@@ -19,6 +19,7 @@ export class AccountComponent implements OnInit {
     account: '',
     character: '',
     characterClass: '',
+    lineage: '',
     background: ''
   };
 
@@ -29,6 +30,7 @@ export class AccountComponent implements OnInit {
       this.formData.account &&
       this.formData.character &&
       this.formData.characterClass &&
+      this.formData.lineage &&
       this.formData.background &&
       this.isValidEmail(this.formData.email)
     );
@@ -42,14 +44,21 @@ export class AccountComponent implements OnInit {
 
   // Lista delle classi disponibili
   characterClasses = [
-    { value: 'arcanist', label: 'Arcanista' },
-    { value: 'archer', label: 'Arciere' },
-    { value: 'bard', label: 'Bardo' },
-    { value: 'berserker', label: 'Berserker' },
-    { value: 'healer', label: 'Guaritore' },
-    { value: 'necromancer', label: 'Necromante' },
-    { value: 'rogue', label: 'Ladro' },
-    { value: 'warrior', label: 'Guerriero' }
+    { value: 'Arcanista', label: 'Arcanista' },
+    { value: 'Arciere', label: 'Arciere' },
+    { value: 'Bardo', label: 'Bardo' },
+    { value: 'Berserker', label: 'Berserker' },
+    { value: 'Guaritore', label: 'Guaritore' },
+    { value: 'Necromante', label: 'Necromante' },
+    { value: 'Ladro', label: 'Ladro' },
+    { value: 'Guerriero', label: 'Guerriero' }
+  ];
+
+  // Lista delle stirpi disponibili
+  lineages = [
+    { value: 'Nord', label: 'Nord' },
+    { value: 'Sud', label: 'Sud' },
+    { value: 'Ovest', label: 'Ovest' }
   ];
 
   constructor(private route: ActivatedRoute) {}
