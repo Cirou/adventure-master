@@ -199,7 +199,7 @@ export class ClassiComponent {
         { type: 'title', content: 'GUIDA AL CURATORE ARCANO' },
         { type: 'paragraph', content: 'Studioso in grado di canalizzare l\'etere in energie curative in grado di supportare i compagni in battaglia e risanare le loro ferite.' },
         { type: 'paragraph', content: 'È in grado di canalizzare l\'etere durante la sua manipolazione ed accumularlo in cariche di “essenza” per liberarla in una esplosione curativa.' },
-        { type: 'paragraph', content: 'Può utilizzare tutte le tipologie di armature sino all\'armatura d\'osso ed impiegarle senza alcun malus alla meditazione.' },
+        { type: 'paragraph', content: 'Può utilizzare tutte le tipologie di armature di pelle, sino all\'armatura d\'osso. Quest\'ultima però comporta l\'impossibilità di meditare.' },
         { type: 'paragraph', content: 'L\'essenza generata potrà essere utilizzata a piacere, tramite il comando [PotenzaCuratore, per potenziare alcuni incantesimi.' },
         { type: 'paragraph', content: 'Può accedere agli incantesimi tramite il comando [MagieCuratore o tramite il gump [Status nella sezione \'Abilità di Classe\'' },
         {

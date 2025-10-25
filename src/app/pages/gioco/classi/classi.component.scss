@@ -170,3 +170,25 @@
         }
     }
 }
+
+// Media query per dispositivi mobili
+@media (max-width: 768px) {
+    .class-content {
+        .class-body {
+            flex-direction: column;
+
+            img {
+                flex: 0 0 auto;
+                order: 2;
+            }
+
+            .class-description {
+                order: 1;
+            }
+        }
+    }
+
+    .guide-sections {
+        padding: 15px 20px;
+    }
+}
