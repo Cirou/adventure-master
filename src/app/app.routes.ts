@@ -35,6 +35,8 @@ import { PostaComponent } from './pages/guide/posta/posta.component';
 import { ComandiComponent } from './pages/guide/comandi/comandi.component';
 import { StoriaComponent } from './pages/ambientazione/storia/storia.component';
 import { AccountComponent } from './pages/account/account.component';
+import { GildeConquisteComponent } from './pages/gioco/gilde-conquiste/gilde-conquiste.component';
+import { GildeComponent } from './pages/gioco/gilde/gilde.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -56,6 +58,8 @@ export const routes: Routes = [
   { path: 'download', component: DownloadComponent },
   { path: 'gioco', component: GiocoComponent },
   { path: 'classi-di-gioco', component: ClassiComponent },
+  { path: 'gioco/gilde', component: GildeComponent },
+  { path: 'gioco/gilde-conquiste', component: GildeConquisteComponent },
   { path: 'gioco/guide', component: GuideComponent },
   { path: 'gioco/guide/armi', component: ArmiComponent },
   { path: 'gioco/guide/rank', component: RankComponent },

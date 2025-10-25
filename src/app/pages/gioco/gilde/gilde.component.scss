@@ -1,0 +1,33 @@
+.hero {
+    background: url('/images/gioco.png') center/cover no-repeat;
+}
+
+.guild-image {
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-caption {
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #888;
+}
+
+.lore-section {
+    ul {
+        list-style: disc;
+        padding-left: 20px;
+        margin: 15px 0;
+        
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+    }
+}
