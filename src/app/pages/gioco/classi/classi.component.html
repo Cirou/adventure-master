@@ -7,47 +7,41 @@
 
 <div class="class-menu">
     <ul>
-        <li *ngFor="let classe of classi; let i = index" [class.active]="i === currentSlide" (click)="goToSlide(i)">
+        <li *ngFor="let classe of classi; let i = index" 
+            [class.active]="i === selectedClasseIndex" 
+            (click)="selectClasse(i)">
             {{ classe.nome }}
         </li>
     </ul>
 </div>
 
-<div class="carousel">
+<div class="class-content" [ngClass]="selectedClasse.nome.toLowerCase()">
+    <h2 class="class-name">{{ selectedClasse.nome }}</h2>
     
-    <button class="carousel-nav prev" (click)="prevSlide()">⮜</button>
-
-    <div class="carousel-window">
-        <div class="carousel-track" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
-            <div class="carousel-slide" *ngFor="let classe of classi" [ngClass]="classe.nome.toLowerCase()">
-                <h2 class="class-name">{{ classe.nome }}</h2>
-                <div class="slide-body">
-                    <img [src]="classe.immaginegdr" [alt]="classe.nome" />
-                    <section class="info-bottom">
-                        <p>{{ classe.descrizione }}</p>
-                    </section>
-                </div>
-                <div class="guide-sections">
-                    <ng-container *ngFor="let sec of classe.guida">
-                        <!-- Titolo sezione -->
-                        <h3 *ngIf="sec.type === 'title'">{{ sec.content }}</h3>
-
-                        <!-- Paragrafo -->
-                        <p *ngIf="sec.type === 'paragraph'">{{ sec.content }}</p>
-
-                        <!-- Lista puntata -->
-                        <ul *ngIf="sec.type === 'list'">
-                            <li *ngFor="let item of sec.items">{{ item }}</li>
-                        </ul>
-
-                        <!-- Galleria immagini -->
-                        <div *ngIf="sec.type === 'images'" class="image-grid">
-                            <img *ngFor="let src of sec.items" [src]="src" />
-                        </div>
-                    </ng-container>
-                </div>
-            </div>
-        </div>
+    <div class="class-body">
+        <img [src]="selectedClasse.immaginegdr" [alt]="selectedClasse.nome" />
+        <section class="class-description">
+            <p>{{ selectedClasse.descrizione }}</p>
+        </section>
     </div>
-    <button class="carousel-nav next" (click)="nextSlide()">⮞</button>
+    
+    <div class="guide-sections">
+        <ng-container *ngFor="let sec of selectedClasse.guida">
+            <!-- Titolo sezione -->
+            <h3 *ngIf="sec.type === 'title'">{{ sec.content }}</h3>
+
+            <!-- Paragrafo -->
+            <p *ngIf="sec.type === 'paragraph'">{{ sec.content }}</p>
+
+            <!-- Lista puntata -->
+            <ul *ngIf="sec.type === 'list'">
+                <li *ngFor="let item of sec.items">{{ item }}</li>
+            </ul>
+
+            <!-- Galleria immagini -->
+            <div *ngIf="sec.type === 'images'" class="image-grid">
+                <img *ngFor="let src of sec.items" [src]="src" />
+            </div>
+        </ng-container>
+    </div>
 </div>

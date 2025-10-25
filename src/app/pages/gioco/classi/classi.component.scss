@@ -2,135 +2,6 @@
     background: url('/images/classi.png') center/cover no-repeat;
 }
 
-.carousel {
-    position: relative;
-    max-width: 1000px;
-    margin: 20px auto;
-    text-align: center;
-}
-
-.carousel-window {
-    overflow: hidden;
-    width: 90%;
-    margin: auto;
-
-    .class-name {
-        font-size: 2rem;
-        font-weight: bold;
-        margin-top: 20px;
-        color: #8b5e3b;
-    }
-
-    .class-lore {
-        font-style: italic;
-        margin-bottom: 20px;
-        white-space: pre-line;
-        text-shadow: 1px 1px 5px black;
-        font-size: 0.9em;
-        color: #1f1f1f;
-    }
-
-    .class-desc {
-        font-size: 1.1rem;
-        margin-top: 20px;
-        color: #3c2a1e;
-    }
-
-    .necromante img {
-        --glow-color: rgb(101, 197, 142);
-    }
-
-    .guerriero img {
-        --glow-color: rgba(255, 140, 0, 0.8);
-    }
-
-    .cacciatore img {
-        --glow-color: rgb(229, 151, 12); // verde foresta
-    }
-
-    .berserker img {
-        --glow-color: rgba(255, 0, 0, 0.8); // rosso sangue
-    }
-
-    .arcanista img {
-        --glow-color: rgb(134, 121, 217);
-    }
-
-    .curatore img {
-        --glow-color: rgba(255, 255, 153, 0.8); // giallo tenue
-    }
-
-    .bardo img {
-        --glow-color: rgba(255, 102, 255, 0.8); // rosa/viola artistico
-    }
-
-    .ladro img {
-        --glow-color: rgba(0, 0, 0, 1); // grigio ombra
-    }
-
-    img {
-        animation: etherealPulse 3s ease-in-out infinite;
-        transition: filter 0.3s ease;
-    }
-
-    @keyframes etherealPulse {
-
-        0%,
-        100% {
-            filter: drop-shadow(0 0 10px var(--glow-color));
-        }
-
-        50% {
-            filter: drop-shadow(0 0 20px var(--glow-color));
-        }
-    }
-
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    min-width: 100%;
-    box-sizing: border-box;
-}
-
-.carousel-slide img {
-    max-width: 100%;
-    max-height: 700px;
-    height: auto;
-    width: auto;
-    display: block;
-    margin: 0 auto 0 auto;
-    object-fit: contain;
-}
-
-
-.carousel-nav {
-    position: absolute;
-    top: 20%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    padding: 10px 16px;
-    cursor: pointer;
-    font-size: 40px;
-    font-weight: bold;
-    border-radius: 50%;
-    z-index: 10;
-    color: #8b5e3b;
-}
-
-.carousel-nav.prev {
-    left: -10px;
-}
-
-.carousel-nav.next {
-    right: -10px;
-}
-
 .class-menu {
     margin: 30px auto 10px auto;
     text-align: center;
@@ -163,44 +34,105 @@
     }
 }
 
-.carousel-slide {
+.class-content {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
 
-    .slide-body {
+    .class-name {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #8b5e3b;
+    }
+
+    .class-body {
         display: flex;
         align-items: flex-start;
         gap: 24px;
-        margin: 20px 40px;
+        margin: 20px 0;
+
+        img {
+            flex: 0 0 40%;
+            max-width: 100%;
+            max-height: 700px;
+            height: auto;
+            object-fit: contain;
+            animation: etherealPulse 3s ease-in-out infinite;
+            transition: filter 0.3s ease;
+        }
+
+        .class-description {
+            flex: 1;
+            text-align: left;
+
+            p {
+                font-size: 1.1rem;
+                line-height: 1.6;
+                color: #3c2a1e;
+            }
+        }
     }
 
-    .slide-body img {
-        flex: 0 0 40%;
-        max-width: 100%;
-        height: auto;
-        margin: 0; // override del margin auto
-        object-fit: contain;
+    // Glow effects per classe
+    &.necromante img {
+        --glow-color: rgb(101, 197, 142);
     }
 
-    .slide-body .info-bottom {
-        flex: 1;
-        padding: 0; // rimuove eventuali padding ereditati
-        background: none; // se vuoi togliere sfondo semitrasp
-        box-shadow: none; // se vuoi togliere shadow
-        text-align: left;
+    &.guerriero img {
+        --glow-color: rgba(255, 140, 0, 0.8);
+    }
+
+    &.cacciatore img {
+        --glow-color: rgb(229, 151, 12);
+    }
+
+    &.berserker img {
+        --glow-color: rgba(255, 0, 0, 0.8);
+    }
+
+    &.arcanista img {
+        --glow-color: rgb(134, 121, 217);
+    }
+
+    &.curatore img {
+        --glow-color: rgba(255, 255, 153, 0.8);
+    }
+
+    &.bardo img {
+        --glow-color: rgba(255, 102, 255, 0.8);
+    }
+
+    &.ladro img {
+        --glow-color: rgba(0, 0, 0, 1);
+    }
+
+    @keyframes etherealPulse {
+        0%,
+        100% {
+            filter: drop-shadow(0 0 10px var(--glow-color));
+        }
+
+        50% {
+            filter: drop-shadow(0 0 20px var(--glow-color));
+        }
     }
 }
 
 .guide-sections {
-
     text-align: left;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.9); // Sfondo bianco semi-trasparente per risaltare
-    padding: 10px 40px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px 40px;
     color: #8b5e3b;
     margin-top: 40px;
 
     h3 {
         font-size: 1.8rem;
         margin-bottom: 10px;
+        margin-top: 20px;
         color: #8b5e3b;
     }
 
@@ -226,6 +158,7 @@
         gap: 16px;
         justify-content: center;
         margin-top: 10px;
+        margin-bottom: 20px;
 
         img {
             flex: 0 0 200px;
