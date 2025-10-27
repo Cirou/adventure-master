@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 interface GuidaSection {
-  type: 'title' | 'paragraph' | 'list' | 'images';
+  type: 'title' | 'paragraph' | 'list' | 'images' | 'link';
   content?: string;        // per title e paragraph
   items?: string[];        // per list e images (liste di stringhe o src)
+  url?: string;            // per link
+  linkText?: string;       // per link
 }
 interface Classe {
   nome: string;
@@ -16,7 +19,7 @@ interface Classe {
 @Component({
   selector: 'app-classi',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './classi.component.html',
   styleUrls: ['./classi.component.scss']
 })
@@ -197,6 +200,7 @@ export class ClassiComponent {
       descrizione: 'Discepolo della luce eterica, il Curatore Arcano è il fulcro del gruppo. Guarisce ferite, rimuove maledizioni, rafforza le difese altrui con incantamenti sottili e potenti. Alcuni curatori più esperti sono anche in grado di riportare in vita un compagno caduto, se l\'Etere lo consente. La sua magia non è passiva: può infliggere danni purificanti a chi usa energie oscure. Ovunque vada, porta conforto, equilibrio e speranza.',
       guida: [
         { type: 'title', content: 'GUIDA AL CURATORE ARCANO' },
+        { type: 'link', linkText: '📖 Leggi l\'approfondimento GDR sul Curatore Arcano', url: '/approfondimenti-gdr/curatore-arcano' },
         { type: 'paragraph', content: 'Studioso in grado di canalizzare l\'etere in energie curative in grado di supportare i compagni in battaglia e risanare le loro ferite.' },
         { type: 'paragraph', content: 'È in grado di canalizzare l\'etere durante la sua manipolazione ed accumularlo in cariche di “essenza” per liberarla in una esplosione curativa.' },
         { type: 'paragraph', content: 'Può utilizzare tutte le tipologie di armature di pelle, sino all\'armatura d\'osso. Quest\'ultima però comporta l\'impossibilità di meditare.' },
@@ -244,7 +248,8 @@ export class ClassiComponent {
           type: 'list', items: [
             'Il piromante può generare cariche di Massa Critica che influenza la potenza dei cast e possono essere utilizzate come reagente per alcuni cast per effetti peculiari',
             'Il Criomante genera cariche di Agilità Mentale che riducono il consumo di mana degli Incantesimi',
-            'L’elettromante genera Cariche Statiche che influiscono su alcuni dei suoi Incantesimi'
+            'L’elettromante genera Cariche Statiche che influiscono su alcuni dei suoi Incantesimi',
+            'Il geomante è in grado di fondersi alla terra stessa per potenziare alcuni dei suoi incantesimi'
                ]
         },
         { type: 'paragraph', content: 'È in grado di accumulare cariche di “Concentrazione” per cambiare o potenziare gli effetti dei suoi incantesimi. Possono essere generate tramite l\'utilizzo di incantesimi o meditando.' },
@@ -288,6 +293,7 @@ export class ClassiComponent {
       descrizione: 'Il Necromante è uno studioso delle profondità dell\'Etere, capace di infonderlo nei corpi dei defunti per animarli come servitori o strumenti. Non si limita a evocare: ascolta l\'eco dei morti, ne assorbe il sapere, li piega al proprio volere. Le sue magie infliggono danni diretti manipolando l\'Etere presente negli esseri viventi, causando corruzione interiore. Un maestro della decadenza e della rinascita artificiale, temuto per ciò che sa, non solo per ciò che fa.',
       guida: [
         { type: 'title', content: 'GUIDA AL NECROMANTE' },
+        { type: 'link', linkText: '📖 Leggi l\'approfondimento GDR sul Necromante', url: '/approfondimenti-gdr/necromante' },
         { type: 'paragraph', content: 'Studioso in grado di canalizzare l\'etere all\'interno di corpi inanimati e specializzato nell\'utilizzo degli incanti velenosi.' },
         { type: 'paragraph', content: 'È in grado di accumulare cariche \'necromantiche\' per utilizzare o alterare l\'effetto dei propri incantesimi. Possono essere generate tramite l\'utilizzo di incantesimi, meditando o tramite la skill Ascoltare gli Spiriti.' },
         { type: 'paragraph', content: 'Le anime generate potranno essere utilizzate a piacere tramite il comando [PotenzaNecromantica, per potenziare alcuni incantesimi' },

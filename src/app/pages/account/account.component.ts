@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 export class AccountComponent implements OnInit {
   showSuccessMessage = false;
   isSubmitting = false;
+  showBgHelp = false;
 
   // Dati del form
   formData = {

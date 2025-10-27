@@ -30,6 +30,11 @@
             <!-- Titolo sezione -->
             <h3 *ngIf="sec.type === 'title'">{{ sec.content }}</h3>
 
+            <!-- Link -->
+            <p *ngIf="sec.type === 'link'" class="gdr-link">
+                <a [routerLink]="sec.url">{{ sec.linkText }}</a>
+            </p>
+
             <!-- Paragrafo -->
             <p *ngIf="sec.type === 'paragraph'">{{ sec.content }}</p>
 

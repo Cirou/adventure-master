@@ -6,10 +6,33 @@
     <button class="menu-toggle" (click)="toggleMenu()">☰</button>
   
     <ul [class.open]="menuOpen">
-      <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
-      <li><a routerLink="/ambientazione" (click)="closeMenu()">Ambientazione</a></li>
       <li><a routerLink="/account" (click)="closeMenu()">Account</a></li>
-      <li><a routerLink="/gioco" (click)="closeMenu()">Il Gioco</a></li>
+      <li class="has-submenu">
+        <a (click)="toggleAmbientazioneSubmenu()" class="submenu-trigger">
+          Ambientazione <span class="arrow">▼</span>
+        </a>
+        <ul class="submenu" [class.open]="ambientazioneSubmenuOpen">
+          <li><a routerLink="/ambientazione" (click)="closeMenu()">Pagina Principale</a></li>
+          <li><a routerLink="/passato-presente" (click)="closeMenu()">Passato e Presente</a></li>
+          <li><a routerLink="/storia" (click)="closeMenu()">La Storia di Clover</a></li>
+          <li><a routerLink="/clover" (click)="closeMenu()">La Città di Clover</a></li>
+          <li><a routerLink="/pericoli" (click)="closeMenu()">I Pericoli per Clover</a></li>
+          <li><a routerLink="/stirpi" (click)="closeMenu()">Le Stirpi</a></li>
+        </ul>
+      </li>
+      <li class="has-submenu">
+        <a (click)="toggleGiocoSubmenu()" class="submenu-trigger">
+          Il Gioco <span class="arrow">▼</span>
+        </a>
+        <ul class="submenu" [class.open]="giocoSubmenuOpen">
+          <li><a routerLink="/gioco" (click)="closeMenu()">Pagina Principale</a></li>
+          <li><a routerLink="/primipassi" (click)="closeMenu()">Primi Passi</a></li>
+          <li><a routerLink="/classi-di-gioco" (click)="closeMenu()">Classi</a></li>
+          <li><a routerLink="/gioco/guide" (click)="closeMenu()">Guide di Gioco</a></li>
+          <li><a routerLink="/gioco/gilde" (click)="closeMenu()">Sistema Gilde</a></li>
+          <li><a routerLink="/gioco/gilde-conquiste" (click)="closeMenu()">Conquiste</a></li>
+        </ul>
+      </li>
       <li><a routerLink="/gioco/guide" (click)="closeMenu()">Guide</a></li>
       <li><a routerLink="/regolamento" (click)="closeMenu()">Regolamento</a></li>
       <li><a routerLink="/download" (click)="closeMenu()">Download</a></li>

@@ -37,6 +37,8 @@ import { StoriaComponent } from './pages/ambientazione/storia/storia.component';
 import { AccountComponent } from './pages/account/account.component';
 import { GildeConquisteComponent } from './pages/gioco/gilde-conquiste/gilde-conquiste.component';
 import { GildeComponent } from './pages/gioco/gilde/gilde.component';
+import { CuratoreArcanoComponent } from './pages/ambientazione/approfondimenti-gdr/curatore-arcano/curatore-arcano.component';
+import { NecromanteComponent } from './pages/ambientazione/approfondimenti-gdr/necromante/necromante.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -77,5 +79,7 @@ export const routes: Routes = [
   { path: 'leggende/draghi', component: DraghiComponent },
   { path: 'leggende/demoni', component: DemoniComponent },
   { path: 'leggende/cultisti', component: CultistiComponent },
+  { path: 'approfondimenti-gdr/curatore-arcano', component: CuratoreArcanoComponent },
+  { path: 'approfondimenti-gdr/necromante', component: NecromanteComponent },
   { path: '**', redirectTo: '' } // Wildcard route for 404 page
 ];

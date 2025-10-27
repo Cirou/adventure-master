@@ -73,7 +73,12 @@
     </div>
 
     <div class="form-group">
-      <label for="background">Background del Personaggio</label>
+      <label for="background">
+        Background del Personaggio
+        <button type="button" class="help-button" (click)="showBgHelp = true" title="Come compilare il background">
+          ❓
+        </button>
+      </label>
       <textarea 
         id="background" 
         name="background" 
@@ -89,6 +94,47 @@
     </button>
   </form>
 </section>
+
+<!-- Background Help Modal -->
+<div class="modal-overlay" *ngIf="showBgHelp" (click)="showBgHelp = false">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="modal-close" (click)="showBgHelp = false">✕</button>
+    <h3>📜 Come compilare il Background</h3>
+    <div class="help-content">
+      <p>Per creare un background completo ed efficace, assicurati di includere i seguenti elementi:</p>
+      
+      <div class="help-section">
+        <h4>🎭 Descrizione Fisica</h4>
+        <p>Descrivi l'aspetto del tuo personaggio: altezza, corporatura, colore dei capelli e degli occhi, segni particolari, abbigliamento preferito, etc.</p>
+      </div>
+
+      <div class="help-section">
+        <h4>⚖️ Morale (Allineamento)</h4>
+        <p>Definisci l'allineamento morale del tuo personaggio: è buono, neutrale o malvagio? È legale, caotico o neutrale? Come si comporta con gli altri?</p>
+      </div>
+
+      <div class="help-section">
+        <h4>⚔️ Vocazione</h4>
+        <p>Spiega come ha scelto la propria classe o ha avuto la sua vocazione: è nato con questo talento? Ha avuto un maestro? Un evento particolare lo ha spinto su questa strada?</p>
+      </div>
+
+      <div class="help-section">
+        <h4>🗺️ Origini</h4>
+        <p>È nato a Clover? O è nato all'esterno? Se viene da fuori, com'è giunto a Clover? Cosa lo ha spinto a viaggiare?</p>
+      </div>
+
+      <div class="help-section">
+        <h4>📖 Storia Generale</h4>
+        <p>Racconta la storia del tuo personaggio: eventi importanti della sua vita, persone significative, obiettivi e motivazioni. Cosa lo spinge ad avventurarsi? Quali sono i suoi sogni e le sue paure?</p>
+      </div>
+
+      <div class="help-footer">
+        <p><strong>Ricorda:</strong> Sii creativo ma coerente con l'ambientazione di Sosaria e Adventure Master!</p>
+      </div>
+    </div>
+    <button class="cta-button" (click)="showBgHelp = false">Ho capito!</button>
+  </div>
+</div>
 
 <div class="final-cta">
   <h2>Ecco qualche consiglio per giocare su Adventure Master</h2>
