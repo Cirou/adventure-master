@@ -14,6 +14,9 @@ export class AccountComponent implements OnInit {
   isSubmitting = false;
   showBgHelp = false;
 
+  // Discord Webhook URL - Sostituisci con il tuo webhook URL
+  private discordWebhookUrl = 'https://discord.com/api/webhooks/1347220410688864398/3MvNqhSxwsJfM1REQ-En-DPgfvb0COWc00kYkVMLqw22OkgHOqqsTwGKEsA7Tfrnf6l2';
+
   // Dati del form
   formData = {
     email: '',
@@ -72,6 +75,90 @@ export class AccountComponent implements OnInit {
     });
   }
 
+  // Invia notifica a Discord
+  private async sendDiscordNotification(): Promise<boolean> {
+    try {
+      // Prepara i campi base
+      const fields = [
+        {
+          name: '📧 Email',
+          value: this.formData.email,
+          inline: false
+        },
+        {
+          name: '👤 Nome Account',
+          value: this.formData.account,
+          inline: true
+        },
+        {
+          name: '⚔️ Nome Personaggio',
+          value: this.formData.character,
+          inline: true
+        },
+        {
+          name: '🎭 Classe',
+          value: this.formData.characterClass,
+          inline: true
+        },
+        {
+          name: '🏰 Stirpe',
+          value: this.formData.lineage,
+          inline: true
+        }
+      ];
+
+      // Dividi il background in chunk da 1024 caratteri
+      const background = this.formData.background;
+      const chunkSize = 1024;
+      const backgroundChunks: string[] = [];
+      
+      for (let i = 0; i < background.length; i += chunkSize) {
+        backgroundChunks.push(background.substring(i, i + chunkSize));
+      }
+
+      // Aggiungi i chunk del background come campi separati
+      backgroundChunks.forEach((chunk, index) => {
+        const isFirst = index === 0;
+        const isLast = index === backgroundChunks.length - 1;
+        const totalParts = backgroundChunks.length;
+        
+        fields.push({
+          name: isFirst 
+            ? (totalParts > 1 ? `📜 Background (Parte 1/${totalParts})` : '📜 Background')
+            : `📜 Background (Parte ${index + 1}/${totalParts})`,
+          value: chunk,
+          inline: false
+        });
+      });
+
+      // Crea un embed colorato per Discord
+      const embed = {
+        title: '🎮 Nuova Richiesta Account - Adventure Master',
+        color: 0x5865F2, // Blu Discord
+        fields: fields,
+        timestamp: new Date().toISOString(),
+        footer: {
+          text: 'Adventure Master - Sistema di Richiesta Account'
+        }
+      };
+
+      const response = await fetch(this.discordWebhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          embeds: [embed]
+        })
+      });
+
+      return response.ok;
+    } catch (error) {
+      console.error('Errore invio Discord:', error);
+      return false;
+    }
+  }
+
   onSubmit(event: Event) {
     event.preventDefault();
     
@@ -82,6 +169,20 @@ export class AccountComponent implements OnInit {
 
     this.isSubmitting = true;
     
+    // Prima invia a Discord, poi a FormSubmit
+    this.sendDiscordNotification().then(discordSuccess => {
+      if (discordSuccess) {
+        console.log('✅ Notifica Discord inviata con successo');
+      } else {
+        console.warn('⚠️ Errore invio Discord, continuo comunque con FormSubmit');
+      }
+
+      // Procedi con FormSubmit indipendentemente dal risultato Discord
+      this.submitToFormSubmit();
+    });
+  }
+
+  private submitToFormSubmit() {
     // Crea un form temporaneo nel DOM per bypassare Angular
     const tempForm = document.createElement('form');
     tempForm.method = 'POST';
