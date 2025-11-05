@@ -20,6 +20,7 @@ export class AccountComponent implements OnInit {
   // Dati del form
   formData = {
     email: '',
+    discord: '',
     account: '',
     character: '',
     characterClass: '',
@@ -31,6 +32,7 @@ export class AccountComponent implements OnInit {
   get isFormValid(): boolean {
     return !!(
       this.formData.email &&
+      this.formData.discord &&
       this.formData.account &&
       this.formData.character &&
       this.formData.characterClass &&
@@ -86,7 +88,12 @@ export class AccountComponent implements OnInit {
           inline: false
         },
         {
-          name: '👤 Nome Account',
+          name: '� Discord',
+          value: this.formData.discord,
+          inline: false
+        },
+        {
+          name: '�👤 Nome Account',
           value: this.formData.account,
           inline: true
         },

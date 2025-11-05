@@ -43,6 +43,11 @@
     </div>
 
     <div class="form-group">
+      <label for="discord">Account Discord</label>
+      <input type="text" id="discord" name="discord" required placeholder="nomeutente#1234 o @nomeutente" [disabled]="isSubmitting" [(ngModel)]="formData.discord">
+    </div>
+
+    <div class="form-group">
       <label for="account">Nome Account</label>
       <input type="text" id="account" name="account" required [disabled]="isSubmitting" [(ngModel)]="formData.account">
     </div>
