@@ -16,6 +16,9 @@ export class AccountComponent implements OnInit {
 
   // Discord Webhook URL - Sostituisci con il tuo webhook URL
   private discordWebhookUrl = 'https://discord.com/api/webhooks/1347220410688864398/3MvNqhSxwsJfM1REQ-En-DPgfvb0COWc00kYkVMLqw22OkgHOqqsTwGKEsA7Tfrnf6l2';
+  
+  // Web3Forms Access Key - Sostituisci con la tua access key
+  private web3formsAccessKey = '7311af65-0343-485e-a557-ed59dea3ca3b';
 
   // Dati del form
   formData = {
@@ -176,55 +179,57 @@ export class AccountComponent implements OnInit {
 
     this.isSubmitting = true;
     
-    // Prima invia a Discord, poi a FormSubmit
+    // Prima invia a Discord, poi a Web3Forms
     this.sendDiscordNotification().then(discordSuccess => {
       if (discordSuccess) {
         console.log('✅ Notifica Discord inviata con successo');
       } else {
-        console.warn('⚠️ Errore invio Discord, continuo comunque con FormSubmit');
+        console.warn('⚠️ Errore invio Discord, continuo comunque con Web3Forms');
       }
 
-      // Procedi con FormSubmit indipendentemente dal risultato Discord
-      this.submitToFormSubmit();
+      // Procedi con Web3Forms indipendentemente dal risultato Discord
+      this.submitToWeb3Forms();
     });
   }
 
-  private submitToFormSubmit() {
-    // Crea un form temporaneo nel DOM per bypassare Angular
-    const tempForm = document.createElement('form');
-    tempForm.method = 'POST';
-    tempForm.action = 'https://formsubmit.co/adventuremasteruo@gmail.com';
-    tempForm.style.display = 'none';
+  private async submitToWeb3Forms() {
+    try {
+      const formData = new FormData();
+      
+      // Aggiungi i campi di configurazione di Web3Forms
+      formData.append('access_key', this.web3formsAccessKey);
+      formData.append('subject', 'Nuova Richiesta Account - Adventure Master');
+      formData.append('from_name', 'Adventure Master');
+      formData.append('redirect', 'https://adventure-master.onrender.com/account?submitted=true');
+      
+      // Aggiungi i dati del form
+      formData.append('email', this.formData.email);
+      formData.append('discord', this.formData.discord);
+      formData.append('account', this.formData.account);
+      formData.append('character', this.formData.character);
+      formData.append('characterClass', this.formData.characterClass);
+      formData.append('lineage', this.formData.lineage);
+      formData.append('background', this.formData.background);
 
-    // Aggiungi i campi di configurazione di FormSubmit
-    const configFields = {
-      '_next': 'https://adventure-master.onrender.com/account?submitted=true',
-      '_subject': 'Nuova Richiesta Account - Adventure Master',
-      '_captcha': 'false',
-      '_template': 'basic',
-      '_honey': ''
-    };
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
 
-    // Aggiungi i campi di configurazione
-    Object.entries(configFields).forEach(([key, value]) => {
-      const input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = key;
-      input.value = value;
-      tempForm.appendChild(input);
-    });
+      const result = await response.json();
 
-    // Aggiungi i dati del form
-    Object.entries(this.formData).forEach(([key, value]) => {
-      const input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = key;
-      input.value = value;
-      tempForm.appendChild(input);
-    });
-
-    // Aggiungi il form al body e invialo
-    document.body.appendChild(tempForm);
-    tempForm.submit();
+      if (result.success) {
+        // Reindirizza alla pagina di successo
+        window.location.href = 'https://adventure-master.onrender.com/account?submitted=true';
+      } else {
+        console.error('Errore Web3Forms:', result.message);
+        alert('Si è verificato un errore durante l\'invio. Riprova più tardi.');
+        this.isSubmitting = false;
+      }
+    } catch (error) {
+      console.error('Errore invio Web3Forms:', error);
+      alert('Si è verificato un errore durante l\'invio. Riprova più tardi.');
+      this.isSubmitting = false;
+    }
   }
 }
